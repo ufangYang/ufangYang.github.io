@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Yu-Fang Yang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="research.html" class="active">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <section class="page-hero hero-neural">
+        <div class="hero-content fade-in">
+            <h1>Research</h1>
+            <p class="hero-sub">How humans process social cues from faces, combining EEG, eye-tracking, and computational modeling.</p>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="section-inner">
+            <div class="card-grid">
+                <div class="card-dark fade-in">
+                    <h3>Gaze and Emotion Processing</h3>
+                    <p>How do gaze direction and emotional expression interact in face perception? Direct gaze signals approach motivation, but what happens when gaze and emotion send conflicting signals? I use EEG (ERP components like EPN, LPP) and eye-tracking to study the time course of these interactions.</p>
+                    <div class="card-meta">Active: EmotionGaze (DDM) · GazeMatter (R2) · Emotion Gaze Cyberball</div>
+                </div>
+
+                <div class="card-dark fade-in">
+                    <h3>Social Exclusion and Cyberball</h3>
+                    <p>The Cyberball paradigm simulates social exclusion in a controlled setting. I study how gaze cues modulate the experience of being excluded. Key finding: Gaze direction during Cyberball influences both self-reported distress and frontal EEG asymmetry, suggesting approach-avoidance motivation shifts.</p>
+                    <div class="card-meta">Yang, Fang & Niedeggen (2025), Scientific Reports</div>
+                </div>
+
+                <div class="card-dark fade-in">
+                    <h3>EEG Methodology and Open Pipelines</h3>
+                    <p>Researcher degrees of freedom in EEG preprocessing can dramatically change results. I co-led EEGManyPipelines, where 33 teams independently analyzed the same dataset, revealing substantial variability in outcomes. I also chair ARTEM-IS, an international EEG reporting standard.</p>
+                    <div class="card-meta">Yang et al. (2024), JOCN · Chair: ARTEM-IS (INCF)</div>
+                </div>
+
+                <div class="card-dark fade-in">
+                    <h3>Diagnostic Facial Features</h3>
+                    <p>Which facial features do we actually look at when categorizing emotions? Using eye-tracking with gaze-contingent techniques, I study the diagnostic features that drive emotion recognition across different face types.</p>
+                    <div class="card-meta">Yang & Gamer (2025), Scientific Reports</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="section-inner">
+            <div class="two-col">
+                <div class="fade-in">
+                    <h2 class="section-title">Methods</h2>
+                    <div class="serif-text">
+                        <p>Recording with EEG (BrainVision), eye-tracking, and co-registration of EEG and eye-tracking.</p>
+                        <p>Analysis through EEGLAB, MATLAB, Python, R, and JASP.</p>
+                        <p>Paradigms including Cyberball, emotion categorization, gaze cueing, and drift-diffusion modeling (DDM).</p>
+                        <p>Open science practices: BIDS-EEG formatting, preregistration (OSF), open data and materials.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h2 class="section-title">Collaborations</h2>
+                    <div class="serif-text">
+                        <p>I work across institutions and initiatives, including UCL London, INRIA France, Universität Würzburg, and multiple Big Team Science projects. I'm a member of SIPS, OHBM, Brainhack, Physiopy, FORRT, and the Chinese Open Science Network.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>&copy; 2026 Yu-Fang Yang</span>
+        <div class="footer-right">
+            <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
+            <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
+            <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('open')); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-in').forEach(el => { observer.observe(el); if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
+    </script>
+</body>
+</html>

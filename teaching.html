@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | Yu-Fang Yang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="teaching.html" class="active">Teaching</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-bg" style="background: linear-gradient(135deg, #2d1810 0%, #4a2c1a 50%, #3d2314 100%);filter:brightness(1);"></div>
+        <div class="hero-content fade-in">
+            <h1>Teaching</h1>
+            <p class="hero-sub">Psychophysiology, social neuroscience, and EEG methods at Freie Universität Berlin.</p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="section-inner">
+            <div class="two-col">
+                <div class="fade-in">
+                    <h2 class="section-title">Philosophy</h2>
+                    <div class="serif-text">
+                        <p>I use a student-centred approach built on reflective learning, peer instruction, and hands-on demonstrations. I treat the classroom like a research lab: students ask questions, form hypotheses, and learn by doing. Techniques include jigsaw puzzles for paper discussions, breakout room rotations, anonymous question waterfalls, Mentimeter polls, and mind-mapping exercises.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h2 class="section-title">Supervision</h2>
+                    <div class="serif-text">
+                        <p>I supervise BA and MSc theses in gaze perception, emotion processing, EEG methodology, and social exclusion paradigms. Carpentries Instructor Training (2022).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="section-inner">
+            <h2 class="section-title" style="color: #fff;">Courses</h2>
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Summer 2024</div>
+                <div class="timeline-title">Non-verbal Social Cues, Eye Gaze, and EEG in Social Interactions</div>
+                <div class="timeline-desc">MSc seminar</div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Summer 2023</div>
+                <div class="timeline-title">Social Cognition and Neuroscience Methods</div>
+                <div class="timeline-desc">BA + MSc seminars</div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Summer 2022</div>
+                <div class="timeline-title">Psychophysiological Methods in Research and Practice</div>
+                <div class="timeline-desc">EEG, EOG, EMG hands-on</div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Winter 2022-2023</div>
+                <div class="timeline-title">Experimentelles Praktikum</div>
+                <div class="timeline-desc">Research methods practicum, R stats</div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Winter 2023</div>
+                <div class="timeline-title">Block Seminar and Lab Presentations</div>
+                <div class="timeline-desc">Research methods</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>&copy; 2026 Yu-Fang Yang</span>
+        <div class="footer-right">
+            <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
+            <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
+            <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80); });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('open')); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-in').forEach(el => { observer.observe(el); if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
+    </script>
+</body>
+</html>

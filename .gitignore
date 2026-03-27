@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build artifacts
+dist/
+.astro/
+
+# logs
+npm-debug.log*
+
+# environment
+.env
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
