@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research at Yu-Fang Yang's lab - Face perception, gaze processing, social exclusion, EEG methodology, and computational modeling at Freie Universität Berlin.">
     <title>Research | Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,86 +11,100 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="#main" class="skip-nav">Skip to main content</a>
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="research.html" class="active">Research</a>
             <a href="publications.html">Publications</a>
-            <a href="teaching.html">Teaching</a>
-            <a href="events.html">Events</a>
+            <a href="activities.html">Activities</a>
             <a href="about.html">About</a>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
     </nav>
 
-    <section class="page-hero hero-neural">
-        <div class="hero-content fade-in">
-            <h1>Research</h1>
-            <p class="hero-sub">How humans process social cues from faces, combining EEG, eye-tracking, and computational modeling.</p>
-        </div>
-    </section>
+    <main id="main">
+        <section class="page-hero hero-neural">
+            <div class="hero-content fade-in">
+                <h1>Research</h1>
+                <p class="hero-sub">How humans process social cues from faces, combining EEG, eye-tracking, and computational modeling.</p>
+            </div>
+        </section>
 
-    <section class="section-dark">
-        <div class="section-inner">
-            <div class="card-grid">
-                <div class="card-dark fade-in">
-                    <h3>Gaze and Emotion Processing</h3>
-                    <p>How do gaze direction and emotional expression interact in face perception? Direct gaze signals approach motivation, but what happens when gaze and emotion send conflicting signals? I use EEG (ERP components like EPN, LPP) and eye-tracking to study the time course of these interactions.</p>
-                    <div class="card-meta">Active: EmotionGaze (DDM) · GazeMatter (R2) · Emotion Gaze Cyberball</div>
-                </div>
-
-                <div class="card-dark fade-in">
-                    <h3>Social Exclusion and Cyberball</h3>
-                    <p>The Cyberball paradigm simulates social exclusion in a controlled setting. I study how gaze cues modulate the experience of being excluded. Key finding: Gaze direction during Cyberball influences both self-reported distress and frontal EEG asymmetry, suggesting approach-avoidance motivation shifts.</p>
-                    <div class="card-meta">Yang, Fang & Niedeggen (2025), Scientific Reports</div>
-                </div>
-
-                <div class="card-dark fade-in">
-                    <h3>EEG Methodology and Open Pipelines</h3>
-                    <p>Researcher degrees of freedom in EEG preprocessing can dramatically change results. I co-led EEGManyPipelines, where 33 teams independently analyzed the same dataset, revealing substantial variability in outcomes. I also chair ARTEM-IS, an international EEG reporting standard.</p>
-                    <div class="card-meta">Yang et al. (2024), JOCN · Chair: ARTEM-IS (INCF)</div>
-                </div>
-
-                <div class="card-dark fade-in">
-                    <h3>Diagnostic Facial Features</h3>
-                    <p>Which facial features do we actually look at when categorizing emotions? Using eye-tracking with gaze-contingent techniques, I study the diagnostic features that drive emotion recognition across different face types.</p>
-                    <div class="card-meta">Yang & Gamer (2025), Scientific Reports</div>
+        <section class="section-light">
+            <div class="section-inner">
+                <div class="serif-text fade-in">
+                    <p>My group investigates how humans decode social signals from faces. We combine EEG, eye-tracking, and computational modeling to understand the temporal dynamics of face perception, gaze processing, and social exclusion. We ask fundamental questions about which facial features drive emotion recognition, how direct versus averted gaze influences social processing, and what happens in the brain when we experience social exclusion.</p>
+                    <p>Our research integrates cognitive neuroscience with open science practices. We prioritize transparency in methodology, contribute to community standards for EEG reporting, and participate in large-scale collaborative projects that test the robustness of our findings.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section-light">
-        <div class="section-inner">
-            <div class="two-col">
-                <div class="fade-in">
-                    <h2 class="section-title">Methods</h2>
-                    <div class="serif-text">
-                        <p>Recording with EEG (BrainVision), eye-tracking, and co-registration of EEG and eye-tracking.</p>
-                        <p>Analysis through EEGLAB, MATLAB, Python, R, and JASP.</p>
-                        <p>Paradigms including Cyberball, emotion categorization, gaze cueing, and drift-diffusion modeling (DDM).</p>
-                        <p>Open science practices: BIDS-EEG formatting, preregistration (OSF), open data and materials.</p>
+        <section class="section-dark">
+            <div class="section-inner">
+                <div class="card-grid">
+                    <div class="card-dark fade-in">
+                        <h3>Gaze and Emotion Processing</h3>
+                        <p>How do gaze direction and emotional expression interact in face perception? I use EEG (ERP components like EPN, LPP) and eye-tracking to study the time course of these interactions.</p>
                     </div>
-                </div>
 
-                <div class="fade-in">
-                    <h2 class="section-title">Collaborations</h2>
-                    <div class="serif-text">
-                        <p>I work across institutions and initiatives, including UCL London, INRIA France, Universität Würzburg, and multiple Big Team Science projects. I'm a member of SIPS, OHBM, Brainhack, Physiopy, FORRT, and the Chinese Open Science Network.</p>
+                    <div class="card-dark fade-in">
+                        <h3>Social Exclusion and Cyberball</h3>
+                        <p>The Cyberball paradigm simulates social exclusion in a controlled setting. I study how gaze cues modulate the experience of being excluded, with findings showing that gaze direction influences both self-reported distress and frontal EEG asymmetry.</p>
+                    </div>
+
+                    <div class="card-dark fade-in">
+                        <h3>EEG Methodology and Open Pipelines</h3>
+                        <p>Researcher degrees of freedom in EEG preprocessing can dramatically change results. I co-led EEGManyPipelines, where 33 teams independently analyzed the same dataset, and chair ARTEM-IS, an international EEG reporting standard.</p>
+                    </div>
+
+                    <div class="card-dark fade-in">
+                        <h3>Diagnostic Facial Features</h3>
+                        <p>Which facial features do we actually look at when categorizing emotions? Using eye-tracking with gaze-contingent techniques, I study the diagnostic features that drive emotion recognition.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="section-light">
+            <div class="section-inner">
+                <div class="two-col">
+                    <div class="fade-in">
+                        <h2 class="section-title">Methods</h2>
+                        <div class="serif-text">
+                            <p>Recording with EEG (BrainVision), eye-tracking, and co-registration of EEG and eye-tracking. Analysis through EEGLAB, MATLAB, Python, R, and JASP. Paradigms including Cyberball, emotion categorization, gaze cueing, and drift-diffusion modeling (DDM). Open science practices: BIDS-EEG formatting, preregistration (OSF), open data and materials.</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <h2 class="section-title">Collaborations</h2>
+                        <div class="serif-text">
+                            <p>I work across institutions and initiatives, including UCL London, INRIA France, Universität Würzburg, and multiple Big Team Science projects. I'm a member of SIPS, OHBM, Brainhack, Physiopy, FORRT, and the Chinese Open Science Network.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <span>&copy; 2026 Yu-Fang Yang</span>
-        <div class="footer-right">
-            <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
-            <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
-            <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="activities.html">Activities</a>
+            <a href="about.html">About</a>
+        </nav>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <span>&copy; 2026 Yu-Fang Yang</span>
+            <div class="footer-right">
+                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
+                <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
+                <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
+            </div>
         </div>
+        <a href="#" class="back-to-top">Back to top &uarr;</a>
     </footer>
 
     <script>
