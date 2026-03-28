@@ -157,7 +157,7 @@ p + p {
    NAVIGATION
    ==================================== */
 
-nav {
+#navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -171,7 +171,7 @@ nav {
   transition: all var(--transition-smooth);
 }
 
-nav.scrolled {
+#navbar.scrolled {
   background-color: rgba(15, 15, 15, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border-light);
@@ -248,7 +248,7 @@ nav.scrolled {
 }
 
 @media (max-width: 768px) {
-  nav {
+  #navbar {
     padding: var(--spacing-lg);
   }
 
@@ -583,6 +583,19 @@ section {
   text-transform: uppercase;
   color: var(--color-text-dark-muted);
   margin-bottom: var(--spacing-xl);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Homepage sections without .section-inner wrappers */
+.recent-work {
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+}
+
+.connect {
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  text-align: center;
 }
 
 /* ====================================
@@ -1082,12 +1095,21 @@ section {
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-2xl);
   text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section.section-light.stat-row {
+  max-width: none;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
 }
 
 @media (max-width: 768px) {
   .stat-row {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+    padding: var(--spacing-2xl) var(--spacing-lg);
   }
 }
 
