@@ -3,102 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yu-Fang Yang - Independent Research Group Leader at Freie UniversitÃ¤t Berlin. Cognitive neuroscience research on face perception, EEG, eye-tracking, and open science.">
-    <title>Home | Yu-Fang Yang</title>
+    <meta name="description" content="Yu-Fang Yang — cognitive and computational neuroscience on face perception, social attention, and analytic reproducibility in EEG and eye-tracking. Freie Universität Berlin.">
+    <meta name="theme-color" content="#f6f1e8">
+    <title>Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main" class="skip-nav">Skip to main content</a>
+
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
-            <a href="activities.html">Activities</a>
-            <a href="about.html">About</a>
+            <a href="talks.html">Talks</a>
+            <a href="connect.html">Connect</a>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
     </nav>
 
     <main id="main">
-        <section class="section-light hero-plain fade-in">
-            <div class="hero-plain-content">
-                <h1 class="hero-name">Yu-Fang Yang</h1>
-                <p class="hero-role">Cognitive and computational neuroscience &middot; Freie UniversitÃ¤t Berlin</p>
-                <p class="hero-lede">Face perception, social attention, and analytic reproducibility in EEG and eye-tracking.</p>
+
+        <section class="hero fade-in">
+            <div class="hero-copy">
+                <span class="eyebrow">Cognitive Neuroscience</span>
+                <h1>Yu-Fang <em>Yang</em></h1>
+                <p class="hero-role">Cognitive &amp; computational neuroscience at Freie Universität Berlin.</p>
+                <p class="hero-lede">
+                    Face perception, social attention, and analytic reproducibility &mdash; studied through EEG and eye-tracking.
+                </p>
                 <div class="hero-buttons">
-                    <a href="research.html" class="btn btn-bordered">Research</a>
-                    <a href="publications.html" class="btn btn-bordered">Publications</a>
-                    <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" class="btn btn-bordered">Google Scholar</a>
+                    <a href="research.html" class="btn">Research</a>
+                    <a href="publications.html" class="btn btn-soft">Publications</a>
                 </div>
             </div>
+
+            <figure class="erp-figure" aria-label="Illustration: event-related potential to a face stimulus, with N170, P200, and P300 markers">
+                <figcaption class="erp-caption">
+                    <span>Face-evoked response</span>
+                    <span class="num">Fig. 01</span>
+                </figcaption>
+
+                <svg class="erp-svg" viewBox="0 0 500 340" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+
+                    <!-- stylized face -->
+                    <g transform="translate(78 170)">
+                        <ellipse class="erp-face" cx="0" cy="2" rx="38" ry="48" />
+                        <circle class="erp-face-dot" cx="-13" cy="-10" r="1.8" />
+                        <circle class="erp-face-dot" cx="13"  cy="-10" r="1.8" />
+                        <path  class="erp-face" d="M -3 -2 L -3 9 L 3 9" />
+                        <path  class="erp-face" d="M -10 22 Q 0 27 10 22" />
+                    </g>
+
+                    <path class="erp-connector" d="M 126 170 L 180 170" />
+
+                    <!-- axes (very subtle) -->
+                    <line class="erp-axis" x1="200" y1="50" x2="200" y2="290" />
+                    <line class="erp-axis" x1="200" y1="180" x2="482" y2="180" />
+
+                    <!-- time ticks -->
+                    <text class="erp-grid-label" x="200" y="308" text-anchor="middle">0</text>
+                    <text class="erp-grid-label" x="293" y="308" text-anchor="middle">200</text>
+                    <text class="erp-grid-label" x="387" y="308" text-anchor="middle">400</text>
+                    <text class="erp-grid-label" x="470" y="308" text-anchor="end" font-style="italic">ms</text>
+
+                    <!-- waveform -->
+                    <path class="erp-waveform"
+                          d="M 200 180
+                             C 218 179, 234 177, 250 180
+                             C 264 184, 272 208, 279 230
+                             C 287 246, 296 144, 303 134
+                             C 320 116, 342 100, 363 98
+                             C 384 96, 402 128, 420 162
+                             C 440 177, 460 180, 480 180" />
+
+                    <!-- markers -->
+                    <g>
+                        <circle class="marker-dot" cx="279" cy="230" r="3" />
+                        <text class="marker-label" x="279" y="252" text-anchor="middle">N170</text>
+                    </g>
+                    <g>
+                        <circle class="marker-dot" cx="303" cy="134" r="3" />
+                        <text class="marker-label" x="303" y="120" text-anchor="middle">P200</text>
+                    </g>
+                    <g>
+                        <circle class="marker-dot" cx="363" cy="98" r="3" />
+                        <text class="marker-label" x="363" y="84" text-anchor="middle">P300</text>
+                    </g>
+                </svg>
+            </figure>
         </section>
 
-        <section class="section-light recent-work fade-in">
-            <h2 class="section-heading">Recent Work</h2>
-            <div class="work-grid">
-                <div class="work-card">
-                    <h3 class="card-title">Gaze modulates neural responses to social exclusion</h3>
-                    <p class="card-description">Direct and averted gaze modulate ERP responses to Cyberball exclusion signals.</p>
-                    <p class="card-meta">Scientific Reports, 2025</p>
-                </div>
-                <div class="work-card">
-                    <h3 class="card-title">Diagnostic facial features and emotion recognition</h3>
-                    <p class="card-description">Fear and happiness-associated features attract gaze during brief exposure without enhancing recognition.</p>
-                    <p class="card-meta">Scientific Reports, 2025</p>
-                </div>
-                <div class="work-card">
-                    <h3 class="card-title">EEGManyPipelines</h3>
-                    <p class="card-description">33 teams, one dataset. Analytical variability shapes EEG results dramatically.</p>
-                    <p class="card-meta">Journal of Cognitive Neuroscience, 2024</p>
-                </div>
+        <section class="recent-wrap fade-in">
+            <div class="recent-head">
+                <h2>Recent <em class="display-italic">writing</em></h2>
+                <a href="publications.html">All publications &rarr;</a>
             </div>
+            <ul class="recent-list">
+                <li>
+                    <span class="meta">2025 · Sci Rep</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        Gaze modulates neural responses to social exclusion
+                    </a>
+                    <span class="venue">Scientific Reports</span>
+                </li>
+                <li>
+                    <span class="meta">2025 · Sci Rep</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        Diagnostic facial features and emotion recognition
+                    </a>
+                    <span class="venue">Scientific Reports</span>
+                </li>
+                <li>
+                    <span class="meta">2024 · J Cogn Neurosci</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        EEGManyPipelines: 33 teams, one dataset
+                    </a>
+                    <span class="venue">J. Cognitive Neuroscience</span>
+                </li>
+            </ul>
         </section>
 
-        <section class="section-dark connect fade-in">
-            <h2 class="section-label">Connect</h2>
-            <div class="social-row">
-                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" class="social-link">Scholar</a>
-                <a href="https://github.com/ufangYang" target="_blank" class="social-link">GitHub</a>
-                <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" class="social-link">ORCID</a>
-                <a href="https://www.researchgate.net/profile/Yu-Fang-Yang" target="_blank" class="social-link">ResearchGate</a>
-                <a href="https://linktr.ee/yufangxyang" target="_blank" class="social-link">Linktree</a>
-            </div>
-        </section>
     </main>
 
     <footer>
+        <span class="footer-brand">Yu-Fang Yang</span>
+        <p class="footer-tag"><em>Cognitive &amp; computational neuroscience.</em></p>
         <nav class="footer-nav" aria-label="Footer navigation">
             <a href="index.html">Home</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
-            <a href="activities.html">Activities</a>
-            <a href="about.html">About</a>
+            <a href="talks.html">Talks</a>
+            <a href="connect.html">Connect</a>
         </nav>
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <span>&copy; 2026 Yu-Fang Yang</span>
+        <div class="footer-row">
+            <span>© 2026 Yu-Fang Yang</span>
             <div class="footer-right">
-                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
-                <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>
+                <a href="https://github.com/ufangYang" target="_blank" rel="noopener">GitHub</a>
                 <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
             </div>
         </div>
-        <a href="#" class="back-to-top">Back to top &uarr;</a>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80); });
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('open')); });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.12 });
-        document.querySelectorAll('.fade-in').forEach(el => { observer.observe(el); if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
