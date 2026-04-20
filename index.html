@@ -3,72 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yu-Fang Yang - Independent Research Group Leader at Freie UniversitÃ¤t Berlin. Cognitive neuroscience research on face perception, EEG, eye-tracking, and open science.">
-    <title>Home | Yu-Fang Yang</title>
+    <meta name="description" content="Yu-Fang Yang — cognitive and computational neuroscience on face perception, social attention, and analytic reproducibility in EEG and eye-tracking. Freie Universität Berlin.">
+    <meta name="theme-color" content="#0a0f11">
+    <title>Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main" class="skip-nav">Skip to main content</a>
+
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
-            <a href="activities.html">Activities</a>
-            <a href="about.html">About</a>
+            <a href="talks.html">Talks</a>
+            <a href="connect.html">Connect</a>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
     </nav>
 
     <main id="main">
-        <section class="section-light hero-plain fade-in">
-            <div class="hero-plain-content">
-                <h1 class="hero-name">Yu-Fang Yang</h1>
-                <p class="hero-role">Cognitive and computational neuroscience &middot; Freie UniversitÃ¤t Berlin</p>
-                <p class="hero-lede">Face perception, social attention, and analytic reproducibility in EEG and eye-tracking.</p>
+
+        <!-- HERO -->
+        <section class="hero fade-in">
+            <div class="hero-copy">
+                <span class="section-label">// face perception · EEG · open science</span>
+                <h1>Yu-Fang <span class="accent">Yang</span></h1>
+                <p class="hero-role">Cognitive &amp; computational neuroscience · Freie Universität Berlin</p>
+                <p class="hero-lede">
+                    Face perception, social attention, and analytic reproducibility in EEG and eye-tracking.
+                </p>
                 <div class="hero-buttons">
-                    <a href="research.html" class="btn btn-bordered">Research</a>
-                    <a href="publications.html" class="btn btn-bordered">Publications</a>
-                    <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" class="btn btn-bordered">Google Scholar</a>
+                    <a href="research.html" class="btn btn-primary">Research</a>
+                    <a href="publications.html" class="btn">Publications</a>
+                    <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener" class="btn">Scholar</a>
                 </div>
             </div>
+
+            <!-- ERP face dynamic figure -->
+            <figure class="erp-figure" aria-label="Illustrative ERP response to a face stimulus showing N170, P200, and P300 components">
+                <figcaption class="erp-caption">
+                    <span><span class="dot"></span>face-locked ERP</span>
+                    <span>ch: PO8 · n=32</span>
+                </figcaption>
+
+                <svg class="erp-svg" viewBox="0 0 500 340" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+
+                    <!-- stylized face stimulus -->
+                    <g transform="translate(80 170)">
+                        <circle class="erp-face-glow" cx="0" cy="0" r="58" />
+                        <ellipse class="erp-face" cx="0" cy="2" rx="38" ry="48" />
+                        <circle class="erp-face-dot" cx="-13" cy="-10" r="2.2" />
+                        <circle class="erp-face-dot" cx="13"  cy="-10" r="2.2" />
+                        <path  class="erp-face" d="M -4 -2 L -4 10 L 4 10" />
+                        <path  class="erp-face" d="M -10 24 Q 0 30 10 24" />
+                    </g>
+
+                    <!-- connector from face to plot -->
+                    <path class="erp-connector" d="M 128 170 L 176 170" />
+                    <circle cx="178" cy="170" r="2" fill="#0f766e" />
+
+                    <!-- gridlines at zero axes -->
+                    <line class="erp-axis-solid" x1="200" y1="60" x2="200" y2="280" />
+                    <line class="erp-axis-solid" x1="200" y1="180" x2="480" y2="180" />
+
+                    <!-- subtle dashed reference lines -->
+                    <line class="erp-axis" x1="200" y1="95"  x2="480" y2="95" />
+                    <line class="erp-axis" x1="200" y1="230" x2="480" y2="230" />
+
+                    <!-- tick labels (time) -->
+                    <text class="erp-grid-label" x="200" y="298" text-anchor="middle">0</text>
+                    <text class="erp-grid-label" x="293" y="298" text-anchor="middle">200</text>
+                    <text class="erp-grid-label" x="387" y="298" text-anchor="middle">400</text>
+                    <text class="erp-grid-label" x="470" y="298" text-anchor="end">ms</text>
+
+                    <!-- amplitude polarity -->
+                    <text class="erp-grid-label" x="193" y="66"  text-anchor="end">+µV</text>
+                    <text class="erp-grid-label" x="193" y="286" text-anchor="end">−µV</text>
+
+                    <!-- ERP waveform -->
+                    <path class="erp-waveform"
+                          d="M 200 180
+                             C 220 178, 235 176, 250 180
+                             C 264 184, 272 208, 279 230
+                             C 287 246, 296 140, 303 130
+                             C 320 112, 342 96, 363 94
+                             C 384 92, 402 126, 420 160
+                             C 440 176, 460 180, 480 180" />
+
+                    <!-- markers -->
+                    <g class="erp-marker n170">
+                        <circle class="marker-ring" cx="279" cy="230" r="9" />
+                        <circle class="marker-dot"  cx="279" cy="230" r="3.6" />
+                        <text class="marker-label" x="279" y="254" text-anchor="middle">N170</text>
+                    </g>
+                    <g class="erp-marker p200">
+                        <circle class="marker-ring" cx="303" cy="130" r="9" />
+                        <circle class="marker-dot"  cx="303" cy="130" r="3.6" />
+                        <text class="marker-label" x="303" y="114" text-anchor="middle">P200</text>
+                    </g>
+                    <g class="erp-marker p300">
+                        <circle class="marker-ring" cx="363" cy="94" r="9" />
+                        <circle class="marker-dot"  cx="363" cy="94" r="3.6" />
+                        <text class="marker-label" x="363" y="78" text-anchor="middle">P300</text>
+                    </g>
+                </svg>
+            </figure>
         </section>
 
-        <section class="section-light recent-work fade-in">
-            <h2 class="section-heading">Recent Work</h2>
+        <!-- RECENT WORK -->
+        <section class="section fade-in">
+            <span class="section-label">// recent work</span>
+            <h2 style="font-size: 1.75rem; margin-top: 0.2rem; margin-bottom: 0.5rem;">Recent</h2>
             <div class="work-grid">
-                <div class="work-card">
+                <a href="publications.html" class="work-card" style="text-decoration:none;border-bottom:none;">
                     <h3 class="card-title">Gaze modulates neural responses to social exclusion</h3>
-                    <p class="card-description">Direct and averted gaze modulate ERP responses to Cyberball exclusion signals.</p>
-                    <p class="card-meta">Scientific Reports, 2025</p>
-                </div>
-                <div class="work-card">
-                    <h3 class="card-title">Diagnostic facial features and emotion recognition</h3>
-                    <p class="card-description">Fear and happiness-associated features attract gaze during brief exposure without enhancing recognition.</p>
-                    <p class="card-meta">Scientific Reports, 2025</p>
-                </div>
-                <div class="work-card">
+                    <p class="card-description">Direct and averted gaze shape ERP responses to Cyberball exclusion signals.</p>
+                    <p class="card-meta">Sci Rep · 2025</p>
+                </a>
+                <a href="publications.html" class="work-card" style="text-decoration:none;border-bottom:none;">
+                    <h3 class="card-title">Diagnostic features and emotion recognition</h3>
+                    <p class="card-description">Fear- and happiness-associated features attract gaze during brief exposure without enhancing recognition.</p>
+                    <p class="card-meta">Sci Rep · 2025</p>
+                </a>
+                <a href="publications.html" class="work-card" style="text-decoration:none;border-bottom:none;">
                     <h3 class="card-title">EEGManyPipelines</h3>
                     <p class="card-description">33 teams, one dataset. Analytical variability shapes EEG results dramatically.</p>
-                    <p class="card-meta">Journal of Cognitive Neuroscience, 2024</p>
-                </div>
+                    <p class="card-meta">J Cogn Neurosci · 2024</p>
+                </a>
             </div>
         </section>
 
-        <section class="section-dark connect fade-in">
-            <h2 class="section-label">Connect</h2>
-            <div class="social-row">
-                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" class="social-link">Scholar</a>
-                <a href="https://github.com/ufangYang" target="_blank" class="social-link">GitHub</a>
-                <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" class="social-link">ORCID</a>
-                <a href="https://www.researchgate.net/profile/Yu-Fang-Yang" target="_blank" class="social-link">ResearchGate</a>
-                <a href="https://linktr.ee/yufangxyang" target="_blank" class="social-link">Linktree</a>
-            </div>
-        </section>
     </main>
 
     <footer>
@@ -76,29 +149,20 @@
             <a href="index.html">Home</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
-            <a href="activities.html">Activities</a>
-            <a href="about.html">About</a>
+            <a href="talks.html">Talks</a>
+            <a href="connect.html">Connect</a>
         </nav>
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <span>&copy; 2026 Yu-Fang Yang</span>
+        <div class="footer-row">
+            <span>© 2026 Yu-Fang Yang</span>
             <div class="footer-right">
-                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank">Scholar</a>
-                <a href="https://github.com/ufangYang" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://github.com/ufangYang" target="_blank" rel="noopener">GitHub</a>
                 <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
             </div>
         </div>
-        <a href="#" class="back-to-top">Back to top &uarr;</a>
+        <a href="#" class="back-to-top">Back to top ↑</a>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80); });
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-        navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('open')); });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.12 });
-        document.querySelectorAll('.fade-in').forEach(el => { observer.observe(el); if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
