@@ -181,10 +181,7 @@
 
     // Run after DOMContent is ready (script is at end of body, so DOM exists)
     // but wrap in requestAnimationFrame so SVG is laid out before sampling
-    requestAnimationFrame(() => {
-        // tiny extra delay for safety
-        setTimeout(initBubbleFigure, 30);
-    });
+    setTimeout(initBubbleFigure, 60);
 
     // ---------- Publications filter ----------
     const pills = document.querySelectorAll('.pub-filter-bar .pill');
