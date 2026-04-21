@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yu-Fang Yang — cognitive and computational neuroscience on face perception, social attention, and analytic reproducibility in EEG and eye-tracking. Freie Universität Berlin.">
+    <meta name="theme-color" content="#f6f1e8">
+    <title>Yu-Fang Yang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-nav">Skip to main content</a>
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
+        <div class="nav-inner">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="talks.html">Talks</a>
+                <a href="connect.html">Connect</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <section class="hero fade-in">
+
+            <figure class="erp-figure" aria-label="Animated bubble face that morphs into an ERP waveform, with N170, P200, and P300 markers">
+                <svg class="erp-svg" viewBox="0 0 400 540" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+                    <defs>
+                        <!-- right-facing profile silhouette (used only for sampling interior points) -->
+                        <path id="faceGuide" d="M 140 62
+                            C 218 54, 286 108, 294 180
+                            C 297 206, 306 214, 316 230
+                            C 325 248, 310 262, 290 266
+                            C 286 286, 286 302, 270 316
+                            C 260 326, 240 328, 228 336
+                            L 222 376
+                            C 218 396, 198 410, 168 414
+                            L 122 422
+                            L 94 412
+                            L 88 340
+                            C 74 252, 74 175, 94 122
+                            C 110 84, 122 66, 140 62 Z" />
+                        <!-- waveform trace (used for sampling positions) -->
+                        <path id="waveGuide" d="M 24 360
+                            C 70 358, 110 356, 140 362
+                            C 170 370, 184 392, 205 430
+                            C 220 458, 232 348, 245 318
+                            C 265 280, 290 268, 312 286
+                            C 335 308, 360 318, 385 312" />
+                    </defs>
+
+                    <!-- all bubbles + markers appended here by script.js -->
+                    <g class="bubble-layer"></g>
+                    <g class="marker-layer"></g>
+
+                    <text class="erp-signature" x="200" y="520" text-anchor="middle">Yu-Fang Yang</text>
+                </svg>
+            </figure>
+
+            <div class="hero-copy">
+                <span class="eyebrow">Cognitive Neuroscience</span>
+                <h1>Yu-Fang <em>Yang</em></h1>
+                <p class="hero-role">Cognitive &amp; computational neuroscience · Freie Universität Berlin</p>
+                <p class="hero-lede">
+                    I investigate how faces become meaningful &mdash; how the brain reads identity, expression, and social cues from a single glance. My tools are EEG, eye-tracking, and multi-lab open-science methods. I care about reproducibility and analytic discipline as much as about the questions themselves.
+                </p>
+                <div class="hero-buttons">
+                    <a href="research.html" class="btn btn-primary">Research</a>
+                    <a href="publications.html" class="btn btn-soft">Publications</a>
+                    <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener" class="btn btn-soft">Google Scholar</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-wrap fade-in">
+            <div class="recent-head">
+                <h2>Recent <em class="display-italic">writing</em></h2>
+                <a href="publications.html">All publications &rarr;</a>
+            </div>
+            <ul class="recent-list">
+                <li>
+                    <span class="meta">2025 · Sci Rep</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        Gaze modulates neural responses to social exclusion
+                    </a>
+                    <span class="venue">Scientific Reports</span>
+                </li>
+                <li>
+                    <span class="meta">2025 · Sci Rep</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        Diagnostic facial features and emotion recognition
+                    </a>
+                    <span class="venue">Scientific Reports</span>
+                </li>
+                <li>
+                    <span class="meta">2024 · J Cogn Neurosci</span>
+                    <a href="publications.html" class="title" style="border-bottom:0;">
+                        EEGManyPipelines: 33 teams, one dataset
+                    </a>
+                    <span class="venue">J. Cognitive Neuroscience</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <span class="footer-brand">Yu-Fang Yang</span>
+        <p class="footer-tag"><em>Cognitive &amp; computational neuroscience.</em></p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="talks.html">Talks</a>
+            <a href="connect.html">Connect</a>
+        </nav>
+        <div class="footer-row">
+            <span>© 2026 Yu-Fang Yang</span>
+            <div class="footer-right">
+                <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>
+                <a href="https://github.com/ufangYang" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
