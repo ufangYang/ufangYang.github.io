@@ -56,8 +56,8 @@
 
             <figure class="erp-figure" aria-label="Animated bubble face that morphs into an ERP waveform, with N170, P200, and P300 markers">
                 <svg class="erp-svg" viewBox="0 0 400 540" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
-                    <defs>
-                        <!-- right-facing profile silhouette (used only for sampling interior points) -->
+                    <!-- guide paths (invisible, used only for sampling) -->
+                    <g class="erp-guides" aria-hidden="true">
                         <path id="faceGuide" d="M 140 62
                             C 218 54, 286 108, 294 180
                             C 297 206, 306 214, 316 230
@@ -71,14 +71,13 @@
                             L 88 340
                             C 74 252, 74 175, 94 122
                             C 110 84, 122 66, 140 62 Z" />
-                        <!-- waveform trace (used for sampling positions) -->
                         <path id="waveGuide" d="M 24 360
                             C 70 358, 110 356, 140 362
                             C 170 370, 184 392, 205 430
                             C 220 458, 232 348, 245 318
                             C 265 280, 290 268, 312 286
                             C 335 308, 360 318, 385 312" />
-                    </defs>
+                    </g>
 
                     <!-- all bubbles + markers appended here by script.js -->
                     <g class="bubble-layer"></g>
