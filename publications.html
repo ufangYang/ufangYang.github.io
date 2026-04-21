@@ -3,40 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Publications by Yu-Fang Yang — peer-reviewed articles, consortium papers, and preprints on face perception, EEG, and eye-tracking.">
+    <meta name="description" content="Publications by Yu-Fang Yang — peer-reviewed articles, consortium papers, and preprints on face perception, social attention, EEG methodology, and open science.">
     <meta name="theme-color" content="#f6f1e8">
     <title>Publications · Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-nav">Skip to main content</a>
 
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="research.html">Research</a>
-            <a href="publications.html" class="active">Publications</a>
-            <a href="talks.html">Talks</a>
-            <a href="connect.html">Connect</a>
+        <div class="nav-inner">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="talks.html">Talks</a>
+                <a href="connect.html">Connect</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
     </nav>
 
     <main id="main">
         <section class="section fade-in">
             <article class="page-content">
                 <span class="eyebrow">Publications</span>
-                <h1>Selected <em class="display-italic">writing</em>.</h1>
+                <h1>In <em class="display-italic">print</em> &amp; in progress.</h1>
                 <p class="page-lede">
-                    Peer-reviewed articles, consortium papers, and preprints. The complete record lives on
+                    Peer-reviewed articles, consortium papers, preprints, and theses. The complete record lives on
                     <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
                     and <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>.
                 </p>
@@ -44,63 +64,462 @@
                 <div class="pub-filter-bar" role="tablist" aria-label="Filter publications">
                     <button class="pill active" data-filter="all" role="tab">All</button>
                     <button class="pill" data-filter="first" role="tab">First-author</button>
+                    <button class="pill" data-filter="face" role="tab">Face perception</button>
+                    <button class="pill" data-filter="social" role="tab">Social attention</button>
+                    <button class="pill" data-filter="eeg" role="tab">EEG / ERP</button>
+                    <button class="pill" data-filter="openscience" role="tab">Open science</button>
                     <button class="pill" data-filter="consortium" role="tab">Consortium</button>
-                    <button class="pill" data-filter="methods" role="tab">Methods</button>
                 </div>
 
                 <div class="year-group">
-                    <h2>2025 <span class="count">two</span></h2>
+                    <h2>2026 <span class="count">one</span></h2>
                     <ul class="pub-list">
-                        <li data-tags="first">
-                            <p class="pub-authors">Yang, Y.-F., et al.</p>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Puhlmann L.M.C., Koppold A., Feld G.B., Lonsdorf T.B., Hilger K., Vogel S., Gürsoy Ç., Kastrinogiannis A., Kulke L., Lischke A., …, <strong>Yang Y.-F.</strong>, et al.</p>
                             <span class="pub-title">
-                                Gaze modulates neural responses to social exclusion: direct and averted gaze shape ERP responses to Cyberball exclusion signals.
-                                <span class="pub-badges"><span class="pub-badge first">First</span></span>
-                            </span>
-                            <span class="pub-meta">Scientific Reports, 2025</span>
-                        </li>
-                        <li data-tags="first">
-                            <p class="pub-authors">Yang, Y.-F., et al.</p>
-                            <span class="pub-title">
-                                Diagnostic facial features and emotion recognition: fear- and happiness-associated features attract gaze during brief exposure without enhancing recognition.
-                                <span class="pub-badges"><span class="pub-badge first">First</span></span>
-                            </span>
-                            <span class="pub-meta">Scientific Reports, 2025</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="year-group">
-                    <h2>2024 <span class="count">one</span></h2>
-                    <ul class="pub-list">
-                        <li data-tags="consortium methods">
-                            <p class="pub-authors">EEGManyPipelines consortium (incl. Yang, Y.-F.)</p>
-                            <span class="pub-title">
-                                EEGManyPipelines: 33 teams, one dataset. Analytical variability shapes EEG results.
+                                Sustainable neuroscience through open science.
                                 <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
                                     <span class="pub-badge consortium">Consortium</span>
-                                    <span class="pub-badge">Methods</span>
                                 </span>
                             </span>
-                            <span class="pub-meta">Journal of Cognitive Neuroscience, 2024</span>
+                            <span class="pub-meta"><em>Nature Human Behaviour</em>, 2026.</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="year-group">
-                    <h2>Earlier</h2>
-                    <p style="color: var(--ink-mute); font-size: 1rem;">
-                        Earlier first-author and collaborative papers are maintained on
-                        <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
-                        Entries will migrate here over time.
-                    </p>
+                    <h2>2025 <span class="count">eleven</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="first social eeg">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Fang X., Niedeggen M.</p>
+                            <span class="pub-title">
+                                Direct and averted gaze modulate the event-related brain responses to social exclusion signals.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Scientific Reports</em>, 15(1), 13396, 2025.</span>
+                        </li>
+                        <li data-tags="first face">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Gamer M.</p>
+                            <span class="pub-title">
+                                Facial features associated with fear and happiness attract gaze during brief exposure without enhancing emotion recognition.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Face perception</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Scientific Reports</em>, 15(1), 30442, 2025.</span>
+                        </li>
+                        <li data-tags="first consortium openscience">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Heinsfeld A.S., Gondová A., Vieira B.H., Wang Q., Li X., Haugen B., Bandettini P.A., Bryant A.G., Chakravarty M.M., et al.</p>
+                            <span class="pub-title">
+                                Proceedings of the OHBM Hackathon 2023.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Aperture Neuro</em>, 5, 2025.</span>
+                        </li>
+                        <li data-tags="consortium eeg openscience">
+                            <p class="pub-authors">Šoškić A., Ković V., Algermissen J., Fischer N.L., Ganis G., Gau R., Mushtaq F., Niso G., Oostenveld R., Pajić D., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                ARTEM-IS for ERP: Agreed Reporting Template for EEG Methodology — International Standard for Event-Related Potential Experiments.
+                                <span class="pub-badges">
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">EEG</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Psychophysiology</em>, 62(12), e70187, 2025.</span>
+                        </li>
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">Fang X., Kerschreiter R., <strong>Yang Y.-F.</strong>, Niedeggen M.</p>
+                            <span class="pub-title">
+                                Electrophysiological and behavioral responses to overinclusion following preexposure to social threat.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Psychophysiology</em>, 62(7), e70107, 2025.</span>
+                        </li>
+                        <li data-tags="openscience">
+                            <p class="pub-authors">Hartmann H., Gürsoy Ç., Lischke A., Mueckstein M., Sperl M.F.J., Vogel S., <strong>Yang Y.-F.</strong>, Feld G.B., Kastrinogiannis A., Koppold A.</p>
+                            <span class="pub-title">
+                                ARIADNE: A scientific navigator to find your way through the resource labyrinth of psychological sciences.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Advances in Methods and Practices in Psychological Science</em>, 8(1), 2025.</span>
+                        </li>
+                        <li data-tags="openscience">
+                            <p class="pub-authors">Bhagwat N., Urchs S., Poline J.-B., <strong>Yang Y.-F.</strong></p>
+                            <span class="pub-title">
+                                Challenging the status quo: A guide to open and reproducible neuroimaging for early career researchers.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Imaging Neuroscience</em>, 3, IMAG–a, 2025.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Nagy T., Hergert J., Elsheriff M., Wallrich L., Schmidt K., Waltzer T., Payne J., Gjoneska B., Seetahul Y., Wang Y.A., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                Bestiary of questionable research practices in psychology.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Advances in Methods and Practices in Psychological Science</em>, 2025.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Vaidis D.C., Miranda J.F., Buchanan E.M., <strong>Yang Y.-F.</strong>, Kowal M., Schmidt K., Topor M., Misiak M., Miller R., Protzko J., et al.</p>
+                            <span class="pub-title">
+                                The advantage of big team sciences: Lessons learned from cognitive science.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">2025.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Knoechel T.-D., Schweizer K., Acar O.A., Akil A.M., Al-Hoorie A.H., Buehler F., Elsherif M., Giannini A., Heyselaar E., Hosseini M., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                Core principles of responsible generative AI usage in research.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>AI and Ethics</em>, 2025.</span>
+                        </li>
+                        <li data-tags="eeg consortium openscience">
+                            <p class="pub-authors">Cesnaite E., Pascarella A., Vinding M., Algermissen J., Fischer N., Puolivӓli T., Gianelli C., Marshall C., Trübutschek D., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                The EEGManyPipelines dataset: Metascientific data on 168 independent analyses of a single EEG dataset.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">EEG</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">OSF preprint, 2025.</span>
+                        </li>
+                        <li data-tags="consortium openscience">
+                            <p class="pub-authors">Lugtmeijer S., Yu J.-C., Kong X., Bellec P.L., Bijsterbosch J.D., DuPre E., Esteban O., Faye I., Hong S.-J., Hu C.-P., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                Proceedings of the OHBM Open Science Room 2024.
+                                <span class="pub-badges">
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Aperture Neuro</em>, 5, 2025.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2024 <span class="count">five</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="consortium eeg openscience">
+                            <p class="pub-authors">Trübutschek D., <strong>Yang Y.-F.</strong>, Gianelli C., Cesnaite E., Fischer N.L., Vinding M.C., Marshall T.R., Algermissen J., Pascarella A., Puolivӓli T., et al.</p>
+                            <span class="pub-title">
+                                EEGManyPipelines: A large-scale, grassroots multi-analyst study of electroencephalography analysis practices in the wild.
+                                <span class="pub-badges">
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">EEG</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Journal of Cognitive Neuroscience</em>, 36(2), 217–224, 2024.</span>
+                        </li>
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">Fang X., Kerschreiter R., <strong>Yang Y.-F.</strong>, Niedeggen M.</p>
+                            <span class="pub-title">
+                                Preexposure to one social threat alters responses to another social threat: Behavioral and electrophysiological evidence.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Cognitive, Affective, &amp; Behavioral Neuroscience</em>, 24(1), 126–142, 2024.</span>
+                        </li>
+                        <li data-tags="eeg openscience">
+                            <p class="pub-authors">Mou X., He C., Tan L., Yu J., Liang H., Zhang J., Tian Y., <strong>Yang Y.-F.</strong>, Xu T., Wang Q., et al.</p>
+                            <span class="pub-title">
+                                ChineseEEG: A Chinese linguistic corpora EEG dataset for semantic alignment and neural decoding.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">EEG</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Scientific Data</em>, 11(1), 550, 2024.</span>
+                        </li>
+                        <li data-tags="consortium openscience">
+                            <p class="pub-authors">Moia S., Wang H.-T., Heinsfeld A.S., Jarecka D., <strong>Yang Y.-F.</strong>, Heunis S., Svanera M., De Leener B., Gondová A., Kim S., et al.</p>
+                            <span class="pub-title">
+                                Proceedings of the OHBM Brainhack 2022.
+                                <span class="pub-badges">
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Aperture Neuro</em>, 2024.</span>
+                        </li>
+                        <li data-tags="eeg openscience">
+                            <p class="pub-authors">Gau R., Cabee P., <strong>Yang Y.-F.</strong></p>
+                            <span class="pub-title">
+                                bidsMReye (v0.5.0) — eye-tracking from MR images.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Software</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">Zenodo, 2024.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2023 <span class="count">four</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">Niedeggen M., Fang X., <strong>Yang Y.-F.</strong>, Kerschreiter R.</p>
+                            <span class="pub-title">
+                                Electrophysiological evidence for sensitization effects elicited by concurrent social threats.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Scientific Reports</em>, 13(1), 12285, 2023.</span>
+                        </li>
+                        <li data-tags="first social eeg">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Fang X., Niedeggen M.</p>
+                            <span class="pub-title">
+                                Gaze matters: The influence of eye contact on the experience of social exclusion — an ERP study.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">Authorea preprint, 2023.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Jin H., Wang Q., <strong>Yang Y.-F.</strong>, Zhang H., Gao M., Jin S., Chen Y., Xu T., Zheng Y.-R., Chen J., et al.</p>
+                            <span class="pub-title">
+                                The Chinese Open Science Network (COSN): Building an open science community from scratch.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Advances in Methods and Practices in Psychological Science</em>, 6(1), 2023.</span>
+                        </li>
+                        <li data-tags="consortium openscience">
+                            <p class="pub-authors">Nikolaidis A., Mancini M., Auer T., Bottenhorn K.L., Alonso-Ortiz E., Gonzalez-Escamilla G., Valk S., Glatard T., Atay M.S., Bayer J.M.M., …, <strong>Yang Y.-F.</strong>, et al.</p>
+                            <span class="pub-title">
+                                Proceedings of the OHBM Brainhack 2021.
+                                <span class="pub-badges">
+                                    <span class="pub-badge consortium">Consortium</span>
+                                    <span class="pub-badge">Open science</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Aperture Neuro</em>, 3, 2023.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2022 <span class="count">four</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="face">
+                            <p class="pub-authors">Liu-Shuang J., <strong>Yang Y.-F.</strong>, Rossion B., Goffaux V.</p>
+                            <span class="pub-title">
+                                Natural contrast statistics facilitate human face categorization.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Face perception</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>eNeuro</em>, 9(5), 2022.</span>
+                        </li>
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">Fang X., <strong>Yang Y.-F.</strong>, Kerschreiter R., Niedeggen M.</p>
+                            <span class="pub-title">
+                                From loss of control to social exclusion: ERP effects of preexposure to a social threat in the Cyberball paradigm.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Brain Sciences</em>, 12(9), 1225, 2022.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Parsons S., Azevedo F., Elsherif M.M., Guay S., Shahim O.N., Govaart G.H., Norris E., O'Mahony A., Parker A.J., Todorovic A., et al.</p>
+                            <span class="pub-title">
+                                A community-sourced glossary of open scholarship terms.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Nature Human Behaviour</em>, 6(3), 312–318, 2022.</span>
+                        </li>
+                        <li data-tags="eeg openscience consortium">
+                            <p class="pub-authors">Govaart G., Schettino A., Helbling S., Mehler D., Ngiam W.X.Q., Moreau D., Chiossi F., Zanesco A., <strong>Yang Y.-F.</strong>, Gau R., et al.</p>
+                            <span class="pub-title">
+                                EEG ERP preregistration template.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">EEG</span>
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">Preprint, 2022.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2021 <span class="count">three</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Gau R., Noble S., Heuer K., Bottenhorn K.L., Bilgin I.P., <strong>Yang Y.-F.</strong>, Huntenburg J.M., Bayer J.M.M., Bethlehem R.A.I., Rhoads S.A., et al.</p>
+                            <span class="pub-title">
+                                Brainhack: Developing a culture of open, inclusive, community-driven neuroscience.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Neuron</em>, 109(11), 1769–1775, 2021.</span>
+                        </li>
+                        <li data-tags="openscience consortium">
+                            <p class="pub-authors">Levitis E., Van Praag C.D.G., Gau R., Heunis S., DuPre E., Kiar G., Bottenhorn K.L., Glatard T., Nikolaidis A., Whitaker K.J., et al.</p>
+                            <span class="pub-title">
+                                Centering inclusivity in the design of online conferences — an OHBM Open Science perspective.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Open science</span>
+                                    <span class="pub-badge consortium">Consortium</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>GigaScience</em>, 10(8), giab051, 2021.</span>
+                        </li>
+                        <li data-tags="first face">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Amorim M.-A., Brunet-Gouet E.</p>
+                            <span class="pub-title">
+                                Reduced configural information modulates fixation patterns but does not affect emotion recognition.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Face perception</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">Preprint, 2021.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2020 <span class="count">one</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="first face eeg">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Brunet-Gouet E., Burca M., Kalunga E.K., Amorim M.-A.</p>
+                            <span class="pub-title">
+                                Brain processes while struggling with evidence accumulation during facial emotion recognition: An ERP study.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Face perception</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Frontiers in Human Neuroscience</em>, 14, 340, 2020.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2019 <span class="count">two</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="first face">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong>, Liu-Shuang J., Rossion B., Goffaux V.</p>
+                            <span class="pub-title">
+                                Contrast sensitivity tuning function for rapid categorization of natural face images.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Face perception</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">42nd European Conference on Visual Perception (ECVP), 2019.</span>
+                        </li>
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">PLOS ONE Staff</p>
+                            <span class="pub-title">
+                                Correction: The neuroelectric dynamics of the emotional anticipation of other people's pain.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>PLOS ONE</em>, 14(1), e0211667, 2019.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="year-group">
+                    <h2>2018 <span class="count">three</span></h2>
+                    <ul class="pub-list">
+                        <li data-tags="face eeg">
+                            <p class="pub-authors">Hsu S.-M., <strong>Yang Y.-F.</strong></p>
+                            <span class="pub-title">
+                                Temporal neural mechanisms underlying conscious access to different levels of facial stimulus contents.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Face perception</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>Journal of Neurophysiology</em>, 119(4), 1356–1366, 2018.</span>
+                        </li>
+                        <li data-tags="social eeg">
+                            <p class="pub-authors">Dozolme D., Prigent E., <strong>Yang Y.-F.</strong>, Amorim M.-A.</p>
+                            <span class="pub-title">
+                                The neuroelectric dynamics of the emotional anticipation of other people's pain.
+                                <span class="pub-badges">
+                                    <span class="pub-badge">Social attention</span>
+                                    <span class="pub-badge">EEG</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta"><em>PLOS ONE</em>, 13(8), e0200535, 2018.</span>
+                        </li>
+                        <li data-tags="first face eeg">
+                            <p class="pub-authors"><strong>Yang Y.-F.</strong></p>
+                            <span class="pub-title">
+                                The contribution of diagnostic featural information to the recognition of emotion facial expressions: A neurocognitive approach with eye-tracking and electroencephalography.
+                                <span class="pub-badges">
+                                    <span class="pub-badge first">First</span>
+                                    <span class="pub-badge">Thesis</span>
+                                    <span class="pub-badge">Face perception</span>
+                                </span>
+                            </span>
+                            <span class="pub-meta">PhD dissertation, Université Paris-Saclay, 2018.</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <hr>
                 <p style="font-size: 0.92rem; color: var(--ink-faint); font-style: italic; font-family: 'Cormorant Garamond', serif;">
-                    Preprints on <a href="https://osf.io/" target="_blank" rel="noopener">OSF</a> and
-                    <a href="https://psyarxiv.com/" target="_blank" rel="noopener">PsyArXiv</a> where applicable.
-                    Open data and analysis code linked per paper.
+                    Preprints live on <a href="https://osf.io/" target="_blank" rel="noopener">OSF</a> and
+                    <a href="https://psyarxiv.com/" target="_blank" rel="noopener">PsyArXiv</a>. Open data and analysis code linked per paper on
+                    <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>.
                 </p>
             </article>
         </section>
