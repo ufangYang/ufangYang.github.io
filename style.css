@@ -395,7 +395,7 @@ main { padding: 0; }
 }
 
 /* hidden guide paths used for sampling */
-#faceGuide, #waveGuide { display: none; }
+.erp-guides { opacity: 0; pointer-events: none; }
 
 /* bubbles: each is a circle at (0,0) translated by transform */
 .bubble {
