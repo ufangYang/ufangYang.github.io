@@ -3,31 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connect with Yu-Fang Yang — email, Scholar, ORCID, GitHub, ResearchGate, Linktree.">
+    <meta name="description" content="Connect with Yu-Fang Yang — Scholar, ORCID, GitHub, ResearchGate, Linktree.">
     <meta name="theme-color" content="#f6f1e8">
     <title>Connect · Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-nav">Skip to main content</a>
 
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="research.html">Research</a>
-            <a href="publications.html">Publications</a>
-            <a href="talks.html">Talks</a>
-            <a href="connect.html" class="active">Connect</a>
+        <div class="nav-inner">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="talks.html">Talks</a>
+                <a href="connect.html" class="active">Connect</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
     </nav>
 
     <main id="main">
@@ -36,7 +56,7 @@
                 <span class="eyebrow">Connect</span>
                 <h1><em class="display-italic">Let's</em> be in touch.</h1>
                 <p class="page-lede">
-                    Open to collaborations in face perception, social attention, and psychophysiological methods reform. Prospective students and postdocs welcome.
+                    Open to collaborations on face perception, emotion, social cognition, and psychophysiological methods reform. Prospective students and postdocs welcome.
                 </p>
 
                 <h2>Find me elsewhere</h2>
@@ -76,13 +96,6 @@
                             <span class="e-arrow">Open &rarr;</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="mailto:yu-fang.yang@fu-berlin.de">
-                            <span class="e-name">Email</span>
-                            <span class="e-handle"><em>yu-fang.yang@fu-berlin.de</em></span>
-                            <span class="e-arrow">Write &rarr;</span>
-                        </a>
-                    </li>
                 </ul>
 
                 <h2>Affiliation</h2>
@@ -93,7 +106,7 @@
 
                 <h2>For prospective collaborators</h2>
                 <p style="color: var(--ink-mute); max-width: var(--text-maxw);">
-                    Best reached by email. Please include a short description of the question you want to work on and any preregistration or pilot data you already have. Methodological inquiries about EEG or eye-tracking pipelines, multi-lab designs, or open-science infrastructure are always welcome.
+                    Best reached via <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Google Scholar</a> or <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>. Please include a short description of the question you'd like to work on and any preregistration or pilot data you already have. Methodological inquiries about EEG or eye-tracking pipelines, multi-lab designs, or open-science infrastructure are always welcome.
                 </p>
             </article>
         </section>
@@ -115,7 +128,6 @@
                 <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>
                 <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>
                 <a href="https://github.com/ufangYang" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
             </div>
         </div>
     </footer>
