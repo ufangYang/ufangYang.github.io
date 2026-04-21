@@ -3,78 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research program of Yu-Fang Yang — face perception, social attention, analytic reproducibility, and psychophysiological methods.">
+    <meta name="description" content="Research topics of Yu-Fang Yang — face perception, emotion, social cognition, and reproducibility.">
     <meta name="theme-color" content="#f6f1e8">
     <title>Research · Yu-Fang Yang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-nav">Skip to main content</a>
 
     <nav id="navbar">
         <a href="index.html" class="nav-logo">Yu-Fang Yang</a>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="research.html" class="active">Research</a>
-            <a href="publications.html">Publications</a>
-            <a href="talks.html">Talks</a>
-            <a href="connect.html">Connect</a>
+        <div class="nav-inner">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="research.html" class="active">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="talks.html">Talks</a>
+                <a href="connect.html">Connect</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
     </nav>
 
     <main id="main">
         <section class="section fade-in">
             <article class="page-content">
                 <span class="eyebrow">Research</span>
-                <h1>A <em class="display-italic">program</em> of work.</h1>
+                <h1>Main <em class="display-italic">topics</em>.</h1>
                 <p class="page-lede">
-                    How people perceive faces, direct attention in social contexts, and how reliably any of it can be measured with EEG and eye-tracking.
+                    How the human brain encodes and decodes facial expression, how that shapes behaviour, and how reliably any of it can be measured. Four threads run through every project.
                 </p>
             </article>
 
             <div class="category-list">
 
                 <article class="category-card">
-                    <div class="category-number">I &middot; Perception</div>
+                    <div class="category-number">I</div>
                     <h3>Face perception</h3>
-                    <p>How the brain extracts identity, emotion, and social cues from faces, and how diagnostic facial features drive overt attention and covert recognition. Combines ERP markers &mdash; N170, EPN, LPP &mdash; with fixation-based measures during brief and sustained viewing.</p>
+                    <p>How the brain extracts identity and diagnostic features from faces, and how those features attract the eye even when recognition is unaffected. ERP markers (N170, EPN, LPP) paired with fixation-based measures under brief and sustained viewing.</p>
                     <div class="tags">
-                        <span>N170</span><span>EPN</span><span>fixation</span>
+                        <a href="publications.html?filter=face">See papers &rarr;</a>
                     </div>
                 </article>
 
                 <article class="category-card">
-                    <div class="category-number">II &middot; Attention</div>
-                    <h3>Social attention</h3>
-                    <p>Gaze direction as a carrier of social signal. Work on direct versus averted gaze in interactive paradigms (including Cyberball-style exclusion) shows how gaze modulates early neural responses to inclusion and rejection.</p>
+                    <div class="category-number">II</div>
+                    <h3>Emotion</h3>
+                    <p>How the brain reads emotional signals — from other people's faces and from anticipated pain — and how accumulating evidence under difficulty shows up in electrophysiology. Emotion recognition, anticipation, and affective processing.</p>
                     <div class="tags">
-                        <span>gaze</span><span>Cyberball</span><span>ERP</span>
+                        <a href="publications.html?filter=emotion">See papers &rarr;</a>
                     </div>
                 </article>
 
                 <article class="category-card">
-                    <div class="category-number">III &middot; Reproducibility</div>
-                    <h3>Analytic reproducibility</h3>
-                    <p>EEG and eye-tracking analyses have many defensible paths. Multi-lab, multi-team projects (EEGManyPipelines) quantify how much analytic variability shapes conclusions, and point toward preregistration, shared pipelines, and robust defaults.</p>
+                    <div class="category-number">III</div>
+                    <h3>Social cognition</h3>
+                    <p>Gaze direction as a social signal. Direct versus averted gaze in interactive paradigms — including Cyberball-style exclusion and overinclusion — and how those cues modulate early neural responses to rejection and acceptance.</p>
                     <div class="tags">
-                        <span>many-analysts</span><span>preregistration</span><span>open data</span>
+                        <a href="publications.html?filter=social">See papers &rarr;</a>
                     </div>
                 </article>
 
                 <article class="category-card">
-                    <div class="category-number">IV &middot; Methods</div>
-                    <h3>Methods</h3>
-                    <p>Dense-array EEG, mobile and lab-based eye-tracking, time-frequency analysis, preregistered designs, Bayesian and mixed-effects modeling, open data and code. Emphasis on defaults that generalize across labs.</p>
+                    <div class="category-number">IV</div>
+                    <h3>Reproducibility &amp; replicability</h3>
+                    <p>EEG and eye-tracking analyses have many defensible paths. Multi-analyst and many-labs projects (EEGManyPipelines, OHBM Brainhack, ARTEM-IS) quantify how much analytic variability shapes conclusions, and point toward preregistration, shared pipelines, and robust defaults.</p>
                     <div class="tags">
-                        <span>EEG</span><span>eye-tracking</span><span>mixed models</span><span>Bayes</span>
+                        <a href="publications.html?filter=repro">See papers &rarr;</a>
                     </div>
                 </article>
 
@@ -84,7 +104,7 @@
                 <hr>
                 <h2>Collaborations</h2>
                 <p style="color: var(--ink-mute);">
-                    Active collaborations with labs working on social cognition, developmental neuroscience, and methods reform in psychophysiology. Inquiries welcome via <a href="mailto:yu-fang.yang@fu-berlin.de">email</a>.
+                    Active collaborations with labs working on social cognition, developmental neuroscience, and methods reform in psychophysiology. Reach me via <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a> or <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>.
                 </p>
             </article>
         </section>
@@ -106,7 +126,6 @@
                 <a href="https://scholar.google.com/citations?user=dWGl1PAAAAAJ" target="_blank" rel="noopener">Scholar</a>
                 <a href="https://orcid.org/0000-0002-8894-4541" target="_blank" rel="noopener">ORCID</a>
                 <a href="https://github.com/ufangYang" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:yu-fang.yang@fu-berlin.de">Email</a>
             </div>
         </div>
     </footer>
