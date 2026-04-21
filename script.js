@@ -76,9 +76,9 @@
         // Sample face-interior positions using a jittered grid + isPointInFill
         const pt = svg.createSVGPoint();
         const facePositions = [];
-        const step = 13;
-        for (let y = 48; y < 430; y += step) {
-            for (let x = 70; x < 330; x += step) {
+        const step = 10;
+        for (let y = 50; y < 490; y += step) {
+            for (let x = 55; x < 345; x += step) {
                 const jx = x + (Math.random() - 0.5) * step * 0.7;
                 const jy = y + (Math.random() - 0.5) * step * 0.7;
                 pt.x = jx; pt.y = jy;
@@ -94,7 +94,7 @@
             [facePositions[i], facePositions[j]] = [facePositions[j], facePositions[i]];
         }
 
-        const N = Math.min(facePositions.length, 80);
+        const N = Math.min(facePositions.length, 150);
         const waveLen = waveGuide.getTotalLength();
 
         const bubbles = [];
@@ -109,9 +109,9 @@
 
             // Size distribution: mostly small, a few larger
             const roll = Math.random();
-            const r = roll < 0.6 ? (1.2 + Math.random() * 1.8)        // small (1.2–3)
-                    : roll < 0.9 ? (2.8 + Math.random() * 2.4)         // medium (2.8–5.2)
-                    :              (4.5 + Math.random() * 3);          // large (4.5–7.5)
+            const r = roll < 0.6 ? (2.2 + Math.random() * 2.3)        // small
+                    : roll < 0.9 ? (4.2 + Math.random() * 2.8)         // medium
+                    :              (6.5 + Math.random() * 3.5);        // large
 
             const c = document.createElementNS(NS, 'circle');
             c.setAttribute('r', r.toFixed(2));
@@ -130,9 +130,9 @@
         //   face positions = approximate scalp electrode sites on the silhouette
         //   wave positions = matching peaks/troughs along the waveform
         const markers = [
-            { label: 'N170', face: { x: 148, y: 108 }, wave: { x: 205, y: 430 } },
-            { label: 'P200', face: { x: 232, y: 118 }, wave: { x: 245, y: 318 } },
-            { label: 'P300', face: { x: 178, y: 205 }, wave: { x: 305, y: 282 } },
+            { label: 'N170', face: { x: 148, y: 140 }, wave: { x: 205, y: 430 } },
+            { label: 'P200', face: { x: 252, y: 140 }, wave: { x: 245, y: 318 } },
+            { label: 'P300', face: { x: 200, y: 90  }, wave: { x: 305, y: 282 } },
         ];
 
         markers.forEach((m, idx) => {
