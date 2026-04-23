@@ -53,43 +53,40 @@
     <main id="main">
 
         <section class="hero fade-in">
-
-            <figure class="erp-figure" aria-label="Animated bubble face that morphs into an ERP waveform, with N170, P200, and P300 markers">
-                <svg class="erp-svg" viewBox="0 0 400 540" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
-                    <!-- hidden guide path used only for sampling bubble positions -->
-                    <g class="venus-guides" aria-hidden="true">
-                        <path id="venusPath" d="M 230 55
-                            C 292 55, 340 100, 346 185
-                            C 348 230, 330 275, 306 306
-                            C 302 332, 308 358, 302 385
-                            C 312 405, 322 430, 312 462
-                            L 302 498
-                            C 278 508, 240 510, 205 508
-                            C 172 508, 142 500, 130 488
-                            L 118 468
-                            C 108 450, 108 432, 118 412
-                            C 96 408, 72 400, 54 384
-                            C 28 358, 8 320, 10 270
-                            C 4 215, 10 160, 30 118
-                            C 52 82, 92 58, 142 55
-                            C 178 52, 208 52, 230 55 Z" />
+            <figure class="brain-erp-figure" aria-label="Brain generating a live ERP waveform">
+                <svg class="brain-erp" viewBox="0 0 620 120" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+                    <!-- left: brain silhouette -->
+                    <g class="brain-group">
+                        <path class="brain-outline" d="M 70 62 C 64 34, 94 14, 126 18 C 156 8, 192 14, 206 38 C 226 44, 228 68, 214 82 C 212 98, 182 102, 160 92 C 142 104, 102 102, 82 88 C 62 86, 52 74, 62 58 C 64 56, 66 58, 70 62 Z" />
+                        <path class="sulcus" d="M 86 32 Q 108 42, 128 46" />
+                        <path class="sulcus" d="M 116 20 Q 140 30, 168 38" />
+                        <path class="sulcus" d="M 94 68 Q 120 74, 144 66" />
+                        <path class="sulcus" d="M 170 52 Q 188 58, 202 62" />
                     </g>
-
-                    <!-- soft silhouette outline -->
-                    <path class="venus-outline" d="M 230 55 C 292 55, 340 100, 346 185 C 348 230, 330 275, 306 306 C 302 332, 308 358, 302 385 C 312 405, 322 430, 312 462 L 302 498 C 278 508, 240 510, 205 508 C 172 508, 142 500, 130 488 L 118 468 C 108 450, 108 432, 118 412 C 96 408, 72 400, 54 384 C 28 358, 8 320, 10 270 C 4 215, 10 160, 30 118 C 52 82, 92 58, 142 55 C 178 52, 208 52, 230 55 Z" />
-
-                    <!-- coloured bubbles filling the silhouette -->
-                    <g class="bubble-layer"></g>
-
-                    <!-- ERP peak markers on the face -->
-                    <g class="marker-layer"></g>
+                    <!-- connector from brain to wave -->
+                    <path class="erp-connector" d="M 226 60 L 246 60" />
+                    <!-- live ERP waveform trace (path d updated by script.js each frame) -->
+                    <path class="erp-live-wave" d="M 246 60 L 600 60" />
+                    <!-- labelled peak markers -->
+                    <g class="erp-peak" data-label="N170" data-x="322" data-y="82">
+                        <circle cx="322" cy="82" r="3.5"/>
+                        <text x="322" y="104" text-anchor="middle">N170</text>
+                    </g>
+                    <g class="erp-peak" data-label="P200" data-x="408" data-y="34">
+                        <circle cx="408" cy="34" r="3.5"/>
+                        <text x="408" y="22" text-anchor="middle">P200</text>
+                    </g>
+                    <g class="erp-peak" data-label="P300" data-x="506" data-y="26">
+                        <circle cx="506" cy="26" r="3.5"/>
+                        <text x="506" y="14" text-anchor="middle">P300</text>
+                    </g>
                 </svg>
             </figure>
 
             <div class="hero-copy">
                 <span class="eyebrow">Cognitive Neuroscience</span>
                 <h1>Yu-Fang <em>Yang</em>, Ph.D.</h1>
-                <p class="hero-role">Cognitive &amp; computational neuroscience · Freie Universität Berlin</p>
+                <p class="hero-role">Cognitive &amp; computational neuroscience &middot; Freie Universität Berlin</p>
                 <p class="hero-lede">
                     I study how the brain reads facial expression and how those signals shape behaviour. My day-to-day tools are EEG and eye-tracking. In parallel, I contribute to multi-analyst and many-labs open-science projects across neuroscience.
                 </p>
