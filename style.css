@@ -291,13 +291,55 @@ main { padding: 0; }
 /* ---------- Hero (figure LEFT, copy RIGHT) ---------- */
 
 .hero {
-    max-width: var(--maxw);
+    max-width: 820px;
     margin: 0 auto;
-    padding: 7rem 2.4rem 5rem;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    padding: 7rem 2.4rem 4rem;
+}
+
+.brain-erp-figure {
+    margin: 0 auto 2rem;
+    max-width: 620px;
+}
+.brain-erp { width: 100%; height: auto; display: block; }
+
+.brain-outline {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+}
+.sulcus {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 0.8;
+    opacity: 0.5;
+}
+.erp-connector {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1;
+    opacity: 0.5;
+    stroke-dasharray: 2 2;
+}
+.erp-live-wave {
+    fill: none;
+    stroke: var(--accent-deep);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+[data-theme="dark"] .erp-live-wave {
+    filter: drop-shadow(0 0 3px var(--glow));
+}
+.erp-peak circle {
+    fill: var(--accent-deep);
+}
+.erp-peak text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11px;
+    fill: var(--ink-mute);
+    letter-spacing: 0.02em;
 }
 
 .hero-copy {
@@ -395,27 +437,7 @@ main { padding: 0; }
 }
 
 /* hidden guide paths used for sampling */
-.erp-guides { opacity: 0; pointer-events: none; }
-.venus-guides { opacity: 0; pointer-events: none; }
-
-/* venus silhouette outline */
-.venus-outline {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 0.8;
-    opacity: 0.35;
-}
-[data-theme="dark"] .venus-outline { opacity: 0.55; }
-
-/* coloured bubbles decompose the Venus face + hair */
-.bubble {
-    /* fill + opacity are set per-bubble via attribute */
-    transition: transform 240ms var(--ease);
-    will-change: transform;
-}
-[data-theme="dark"] .bubble {
-    filter: saturate(0.85) brightness(0.95);
-}
+/* (venus+bubble rules removed — replaced by brain+erp banner) */
 
 /* accent markers: named peaks that travel with the bubbles */
 .marker {
@@ -912,12 +934,8 @@ footer {
 
 @media (max-width: 860px) {
     body { font-size: 16px; }
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 2.2rem;
-        padding: 3.5rem 1.6rem 2rem;
-    }
-    .erp-figure { aspect-ratio: 1 / 1; max-width: 380px; margin: 0 auto; }
+    .hero { padding: 3.5rem 1.6rem 2rem; }
+    .brain-erp-figure { max-width: 100%; }
     .section, .recent-wrap, footer { padding-left: 1.6rem; padding-right: 1.6rem; }
     .section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
 
