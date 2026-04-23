@@ -60,81 +60,63 @@
         if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
     });
 
-    // ---------- Bubble face ↔ waveform morph ----------
-    function initBubbleFigure() {
+    // ---------- Venus ERP waves ----------
+    // Stacked ERP-shaped curves clipped to a Venus-inspired silhouette.
+    // Each curve breathes with a small phase-shifted drift.
+    function initVenusFigure() {
         const svg = document.querySelector('.erp-svg');
         if (!svg) return;
-        const faceGuide = svg.querySelector('#faceGuide');
-        const waveGuide = svg.querySelector('#waveGuide');
-        const bubbleLayer = svg.querySelector('.bubble-layer');
+        const waveLayer = svg.querySelector('.wave-layer');
         const markerLayer = svg.querySelector('.marker-layer');
-        if (!faceGuide || !waveGuide || !bubbleLayer) return;
+        if (!waveLayer) return;
 
-        // respect reduced motion: render a static face only
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Sample face-interior positions using a jittered grid + isPointInFill
-        const pt = svg.createSVGPoint();
-        const facePositions = [];
-        const step = 10;
-        for (let y = 50; y < 490; y += step) {
-            for (let x = 55; x < 345; x += step) {
-                const jx = x + (Math.random() - 0.5) * step * 0.7;
-                const jy = y + (Math.random() - 0.5) * step * 0.7;
-                pt.x = jx; pt.y = jy;
-                try {
-                    if (faceGuide.isPointInFill(pt)) facePositions.push({ x: jx, y: jy });
-                } catch (e) { /* some browsers throw if path isn't in DOM yet */ }
+        // Build one ERP-like trace at baseline y, horizontally spanning viewBox.
+        function erpPath(baseY, phase, amp) {
+            const pts = [];
+            for (let x = 0; x <= 400; x += 4) {
+                const t = x / 400;
+                let y = baseY;
+                // gentle carrier wave
+                y += Math.sin(t * 2 * Math.PI + phase) * (2 + amp * 0.4);
+                // N170 dip near t=0.32
+                y -= Math.exp(-Math.pow((t - 0.32) * 11, 2)) * (8 + amp);
+                // P200 peak near t=0.50
+                y += Math.exp(-Math.pow((t - 0.50) * 12, 2)) * (6 + amp * 0.8);
+                // P300 peak near t=0.72
+                y += Math.exp(-Math.pow((t - 0.72) * 9, 2)) * (10 + amp * 1.1);
+                pts.push(x + ',' + y.toFixed(2));
             }
+            return 'M ' + pts.join(' L ');
         }
 
-        // Shuffle so animation feels organic (not left-to-right)
-        for (let i = facePositions.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [facePositions[i], facePositions[j]] = [facePositions[j], facePositions[i]];
+        // Draw ~38 stacked ERP traces across the silhouette
+        const count = 38;
+        const top = 40;
+        const bottom = 500;
+        for (let i = 0; i < count; i++) {
+            const t = i / (count - 1);
+            const baseY = top + t * (bottom - top);
+            const phase = i * 0.42;
+            const amp = 2 + Math.random() * 3;
+            const path = document.createElementNS(NS, 'path');
+            path.setAttribute('d', erpPath(baseY, phase, amp));
+            path.classList.add('erp-wave');
+            path.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
+            if (!reduced) {
+                path.style.animationDelay = (i * 0.11).toFixed(2) + 's';
+                path.style.animationDuration = (5 + (i % 4) * 0.8).toFixed(2) + 's';
+            }
+            waveLayer.appendChild(path);
         }
 
-        const N = Math.min(facePositions.length, 150);
-        const waveLen = waveGuide.getTotalLength();
-
-        const bubbles = [];
-        for (let i = 0; i < N; i++) {
-            const face = facePositions[i];
-            // Distribute along waveform, with slight vertical jitter so bubbles don't collapse to a line
-            const t = i / Math.max(1, N - 1);
-            const wavePt = waveGuide.getPointAtLength(t * waveLen);
-            const waveJitterY = (Math.random() - 0.5) * 6;
-            const waveJitterX = (Math.random() - 0.5) * 3;
-            const wave = { x: wavePt.x + waveJitterX, y: wavePt.y + waveJitterY };
-
-            // Size distribution: mostly small, a few larger
-            const roll = Math.random();
-            const r = roll < 0.6 ? (2.2 + Math.random() * 2.3)        // small
-                    : roll < 0.9 ? (4.2 + Math.random() * 2.8)         // medium
-                    :              (6.5 + Math.random() * 3.5);        // large
-
-            const c = document.createElementNS(NS, 'circle');
-            c.setAttribute('r', r.toFixed(2));
-            c.setAttribute('cx', 0);
-            c.setAttribute('cy', 0);
-            c.classList.add('bubble');
-            c.style.opacity = (0.35 + Math.random() * 0.55).toFixed(2);
-            c.style.transitionDelay = (Math.random() * 0.5).toFixed(2) + 's';
-            c.style.transform = `translate(${face.x.toFixed(2)}px, ${face.y.toFixed(2)}px)`;
-            bubbleLayer.appendChild(c);
-            bubbles.push({ el: c, face, wave });
-        }
-
-        // ---------- Accent markers ----------
-        // Three named peaks: N170, P200, P300
-        //   face positions = approximate scalp electrode sites on the silhouette
-        //   wave positions = matching peaks/troughs along the waveform
+        // Markers on the face: N170 (left temporal), P200 (right temporal), P300 (central-parietal)
         const markers = [
-            { label: 'N170', face: { x: 148, y: 140 }, wave: { x: 205, y: 430 } },
-            { label: 'P200', face: { x: 252, y: 140 }, wave: { x: 245, y: 318 } },
-            { label: 'P300', face: { x: 200, y: 90  }, wave: { x: 305, y: 282 } },
+            { label: 'N170', x: 130, y: 170 },
+            { label: 'P200', x: 270, y: 160 },
+            { label: 'P300', x: 200, y: 110 },
         ];
-
         markers.forEach((m, idx) => {
             const g = document.createElementNS(NS, 'g');
             g.classList.add('marker');
@@ -143,7 +125,7 @@
             ring.classList.add('marker-ring');
             ring.style.animationDelay = (idx * 0.5) + 's';
             const dot = document.createElementNS(NS, 'circle');
-            dot.setAttribute('r', 4);
+            dot.setAttribute('r', 3.5);
             dot.classList.add('marker-dot');
             const txt = document.createElementNS(NS, 'text');
             txt.classList.add('marker-label');
@@ -153,35 +135,14 @@
             g.appendChild(ring);
             g.appendChild(dot);
             g.appendChild(txt);
-            g.style.transform = `translate(${m.face.x}px, ${m.face.y}px)`;
+            g.style.transform = `translate(${m.x}px, ${m.y}px)`;
             markerLayer.appendChild(g);
-            m.el = g;
         });
-
-        if (reduced) return;  // Stay in face state only
-
-        // ---------- Morph loop ----------
-        let state = 'face';
-        function flip() {
-            state = state === 'face' ? 'wave' : 'face';
-            bubbles.forEach(b => {
-                const target = b[state];
-                b.el.style.transform = `translate(${target.x.toFixed(2)}px, ${target.y.toFixed(2)}px)`;
-            });
-            markers.forEach(m => {
-                const target = m[state];
-                m.el.style.transform = `translate(${target.x}px, ${target.y}px)`;
-            });
-        }
-
-        // Kick off: hold face 3.5s, then alternate every 6.5s
-        setTimeout(flip, 3500);
-        setInterval(flip, 6500);
     }
 
     // Run after DOMContent is ready (script is at end of body, so DOM exists)
     // but wrap in requestAnimationFrame so SVG is laid out before sampling
-    setTimeout(initBubbleFigure, 60);
+    setTimeout(initVenusFigure, 60);
 
     // ---------- Publications filter ----------
     const pills = document.querySelectorAll('.pub-filter-bar .pill');
