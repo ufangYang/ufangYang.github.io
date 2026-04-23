@@ -97,19 +97,17 @@
             return 'M ' + pts.join(' L ');
         }
 
-        if (reduced) {
-            wave.setAttribute('d', buildPath(0));
-            return;
-        }
+        // paint the static shape immediately so it works even before rAF fires
+        wave.setAttribute('d', buildPath(0));
+        if (reduced) return;
 
-        let startTime = null;
-        function frame(ts) {
-            if (startTime === null) startTime = ts;
-            const t = (ts - startTime) / 1000;
+        // then animate with setInterval (works even when the tab is hidden,
+        // unlike requestAnimationFrame which gets throttled)
+        const started = Date.now();
+        setInterval(() => {
+            const t = (Date.now() - started) / 1000;
             wave.setAttribute('d', buildPath(t));
-            requestAnimationFrame(frame);
-        }
-        requestAnimationFrame(frame);
+        }, 60);
     }
 
     // Run after DOMContent is ready (script is at end of body, so DOM exists)
