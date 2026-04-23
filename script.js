@@ -104,8 +104,8 @@
 
         // Face ellipse: center (198, 195), radii (62, 82)
         function pickColour(x, y) {
-            const dx = (x - 198) / 62;
-            const dy = (y - 195) / 82;
+            const dx = (x - 222) / 62;
+            const dy = (y - 198) / 82;
             const distFace = dx * dx + dy * dy;
             if (distFace < 0.65) {
                 return pick(PAL.face);
@@ -114,16 +114,16 @@
                 const r = Math.random();
                 return r < 0.55 ? pick(PAL.face) : r < 0.8 ? pick(PAL.blush) : pick(PAL.hairBright);
             }
-            if (y > 385) {
+            if (y > 405) {
                 const r = Math.random();
                 return r < 0.45 ? pick(PAL.face) : r < 0.8 ? pick(PAL.hairDeep) : pick(PAL.cool);
             }
-            if (y < 135) {
+            if (y < 125) {
                 const r = Math.random();
                 return r < 0.55 ? pick(PAL.hairDeep) : r < 0.85 ? pick(PAL.hairBright) : pick(PAL.hairShadow);
             }
             // flowing hair on the sides — left side brighter/wind-swept
-            if (x < 140) {
+            if (x < 160) {
                 const r = Math.random();
                 return r < 0.5 ? pick(PAL.hairBright) : r < 0.85 ? pick(PAL.hairDeep) : pick(PAL.hairShadow);
             }
@@ -150,9 +150,9 @@
 
         // Peak markers sit on the face area
         const markers = [
-            { label: 'N170', x: 140, y: 175 },
-            { label: 'P200', x: 256, y: 165 },
-            { label: 'P300', x: 200, y: 115 }
+            { label: 'N170', x: 162, y: 190 },
+            { label: 'P200', x: 282, y: 175 },
+            { label: 'P300', x: 222, y: 115 }
         ];
         markers.forEach((m, idx) => {
             const g = document.createElementNS(NS, 'g');
