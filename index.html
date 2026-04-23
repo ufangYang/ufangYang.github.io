@@ -56,39 +56,27 @@
 
             <figure class="erp-figure" aria-label="Animated bubble face that morphs into an ERP waveform, with N170, P200, and P300 markers">
                 <svg class="erp-svg" viewBox="0 0 400 540" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
-                    <defs>
-                        <!-- Venus-inspired silhouette (head + flowing hair) used as clip -->
-                        <clipPath id="venusClip">
-                            <path d="M 220 60
-                                C 285 60, 330 115, 335 195
-                                C 335 260, 312 315, 282 352
-                                C 272 382, 276 412, 268 448
-                                L 262 498
-                                L 142 498
-                                L 138 452
-                                C 132 422, 130 395, 116 366
-                                C 90 352, 70 332, 66 296
-                                C 42 262, 24 212, 32 156
-                                C 42 106, 72 72, 116 62
-                                C 150 56, 190 56, 220 60 Z" />
-                        </clipPath>
-                        <path id="waveGuide" d="M 24 360
-                            C 70 358, 110 356, 140 362
-                            C 170 370, 184 392, 205 430
-                            C 220 458, 232 348, 245 318
-                            C 265 280, 290 268, 312 286
-                            C 335 308, 360 318, 385 312" />
-                    </defs>
-
-                    <!-- soft fill inside the silhouette -->
-                    <g clip-path="url(#venusClip)">
-                        <rect x="0" y="0" width="400" height="540" class="venus-fill" />
-                        <!-- stacked ERP waveforms appended here by script.js -->
-                        <g class="wave-layer"></g>
+                    <!-- hidden guide path used only for sampling bubble positions -->
+                    <g class="venus-guides" aria-hidden="true">
+                        <path id="venusPath" d="M 220 60
+                            C 285 60, 330 115, 335 195
+                            C 335 260, 312 315, 282 352
+                            C 272 382, 276 412, 268 448
+                            L 262 498
+                            L 142 498
+                            L 138 452
+                            C 132 422, 130 395, 116 366
+                            C 90 352, 70 332, 66 296
+                            C 42 262, 24 212, 32 156
+                            C 42 106, 72 72, 116 62
+                            C 150 56, 190 56, 220 60 Z" />
                     </g>
 
-                    <!-- thin silhouette outline -->
+                    <!-- soft silhouette outline -->
                     <path class="venus-outline" d="M 220 60 C 285 60, 330 115, 335 195 C 335 260, 312 315, 282 352 C 272 382, 276 412, 268 448 L 262 498 L 142 498 L 138 452 C 132 422, 130 395, 116 366 C 90 352, 70 332, 66 296 C 42 262, 24 212, 32 156 C 42 106, 72 72, 116 62 C 150 56, 190 56, 220 60 Z" />
+
+                    <!-- coloured bubbles filling the silhouette -->
+                    <g class="bubble-layer"></g>
 
                     <!-- ERP peak markers on the face -->
                     <g class="marker-layer"></g>
