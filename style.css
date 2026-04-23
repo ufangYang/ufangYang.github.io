@@ -396,37 +396,25 @@ main { padding: 0; }
 
 /* hidden guide paths used for sampling */
 .erp-guides { opacity: 0; pointer-events: none; }
+.venus-guides { opacity: 0; pointer-events: none; }
 
-/* venus silhouette fill + outline */
-.venus-fill {
-    fill: var(--accent-soft);
-    opacity: 0.55;
-}
+/* venus silhouette outline */
 .venus-outline {
     fill: none;
     stroke: var(--accent);
     stroke-width: 0.8;
-    opacity: 0.4;
+    opacity: 0.35;
 }
 [data-theme="dark"] .venus-outline { opacity: 0.55; }
 
-/* ERP waveforms that fill the silhouette */
-.erp-wave {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 0.9;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    animation: wave-drift 6s ease-in-out infinite;
-    will-change: transform, stroke-dashoffset;
-    transform-origin: center;
+/* coloured bubbles decompose the Venus face + hair */
+.bubble {
+    /* fill + opacity are set per-bubble via attribute */
+    transition: transform 240ms var(--ease);
+    will-change: transform;
 }
-[data-theme="dark"] .erp-wave {
-    filter: drop-shadow(0 0 2px var(--glow));
-}
-@keyframes wave-drift {
-    0%, 100% { transform: translateX(-6px); }
-    50%      { transform: translateX(6px); }
+[data-theme="dark"] .bubble {
+    filter: saturate(0.85) brightness(0.95);
 }
 
 /* accent markers: named peaks that travel with the bubbles */
@@ -915,7 +903,7 @@ footer {
         transition-duration: 0.01ms !important;
     }
     .fade-in { opacity: 1; transform: none; }
-    .erp-wave { animation: none; }
+    .bubble { transition: none; }
     .marker { transition: none; }
     .marker-ring { animation: none; opacity: 0.4; }
 }
