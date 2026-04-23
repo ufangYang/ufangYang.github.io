@@ -102,6 +102,9 @@
             const amp = 2 + Math.random() * 3;
             const path = document.createElementNS(NS, 'path');
             path.setAttribute('d', erpPath(baseY, phase, amp));
+            path.setAttribute('fill', 'none');
+            path.setAttribute('stroke-width', '0.9');
+            path.setAttribute('stroke-linecap', 'round');
             path.classList.add('erp-wave');
             path.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
             if (!reduced) {
