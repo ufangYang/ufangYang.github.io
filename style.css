@@ -1,26 +1,27 @@
 /* ============================================================
-   Yu-Fang Yang — editorial
-   Light: warm cream + olive  ·  Dark: near-black + cool cyan
+   Yu-Fang Yang — editorial · white + deep red
+   Light (default): white paper, near-black ink, deep red accent
+   Dark: charcoal + brighter red (toggle option)
    ============================================================ */
 
 :root {
-    /* LIGHT (default) — soft sage + charcoal */
-    --bg:           #ebeee6;
-    --paper:        #f1f3ec;
-    --paper-2:      #dfe3d8;
+    /* LIGHT (default) — white paper, deep red accent */
+    --bg:           #ffffff;
+    --paper:        #ffffff;
+    --paper-2:      #f5f2f0;
 
-    --ink:          #2d322f;
-    --ink-mute:     #6a716a;
-    --ink-faint:    #a8aea5;
+    --ink:          #1a1a1a;
+    --ink-mute:     #585655;
+    --ink-faint:    #9a9694;
 
-    --accent:       #7d9683;
-    --accent-soft:  #dce4d8;
-    --accent-deep:  #4f6858;
+    --accent:       #8a1a2c;
+    --accent-soft:  #f6e7e9;
+    --accent-deep:  #6c1422;
 
-    --border:       #d2d6ca;
-    --border-soft:  #dfe1d6;
+    --border:       #e7e3e0;
+    --border-soft:  #f0edea;
 
-    --glow:         rgba(125, 150, 131, 0);
+    --glow:         rgba(138, 26, 44, 0);
 
     --maxw:         1100px;
     --text-maxw:    640px;
@@ -31,22 +32,23 @@
 }
 
 [data-theme="dark"] {
-    --bg:           #12161a;
-    --paper:        #1a1e22;
-    --paper-2:      #222731;
+    /* charcoal + brighter red (toggle option) */
+    --bg:           #161517;
+    --paper:        #1d1c1f;
+    --paper-2:      #262428;
 
-    --ink:          #e6eae6;
-    --ink-mute:     #868c84;
-    --ink-faint:    #4a504a;
+    --ink:          #f2efee;
+    --ink-mute:     #a09a9a;
+    --ink-faint:    #5e595b;
 
-    --accent:       #9eb9a3;
-    --accent-soft:  rgba(158, 185, 163, 0.14);
-    --accent-deep:  #bbd3c0;
+    --accent:       #e64b5e;
+    --accent-soft:  rgba(230, 75, 94, 0.16);
+    --accent-deep:  #f06a7a;
 
-    --border:       #252a2e;
-    --border-soft:  #1c2024;
+    --border:       #312e31;
+    --border-soft:  #232125;
 
-    --glow:         rgba(158, 185, 163, 0.35);
+    --glow:         rgba(230, 75, 94, 0.32);
 
     color-scheme: dark;
 }
@@ -79,8 +81,8 @@ body::before {
     opacity: 0;
     transition: opacity 400ms var(--ease);
     background:
-        radial-gradient(600px 400px at 20% 25%, rgba(122, 184, 176, 0.06), transparent 70%),
-        radial-gradient(700px 500px at 85% 80%, rgba(122, 184, 176, 0.04), transparent 70%);
+        radial-gradient(600px 400px at 20% 25%, rgba(230, 75, 94, 0.06), transparent 70%),
+        radial-gradient(700px 500px at 85% 80%, rgba(230, 75, 94, 0.04), transparent 70%);
 }
 [data-theme="dark"] body::before { opacity: 1; }
 

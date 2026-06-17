@@ -17,12 +17,12 @@
             const stored = localStorage.getItem('theme');
             if (stored === 'light' || stored === 'dark') return stored;
         } catch (e) {}
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return 'light';
     }
     function applyTheme(t) {
         root.setAttribute('data-theme', t);
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', t === 'dark' ? '#0a0b10' : '#f6f1e8');
+        if (meta) meta.setAttribute('content', t === 'dark' ? '#161517' : '#ffffff');
     }
     if (!root.getAttribute('data-theme')) applyTheme(getInitial());
     if (themeBtn) {
