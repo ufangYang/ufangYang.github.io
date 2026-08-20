@@ -1,0 +1,18 @@
+Neyeronstein
+Copyright (c) 2026 Yu-Fang Yang. All rights reserved.
+
+ARTWORK & VISUAL DESIGNS
+The generative visuals and their designs are licensed under
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+You may share and adapt them for non-commercial purposes with clear credit
+to Yu-Fang Yang. See https://creativecommons.org/licenses/by-nc/4.0/
+
+SOURCE CODE
+All rights reserved. The source code may not be copied, reused, or
+incorporated into other products without prior written permission.
+
+NAME & BRANDING
+"Neyeronstein", the wordmark, and associated branding are the property of
+Yu-Fang Yang and may not be used without permission.
+
+For any other use, or for commercial licensing, contact the author.

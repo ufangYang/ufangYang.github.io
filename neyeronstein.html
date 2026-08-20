@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neyeronstein — live brain art</title>
+<meta name="description" content="Neyeronstein turns your live brainwaves into light. A portable EEG headband reads your brain as you wear it." />
+<style>
+  :root{ color-scheme:dark; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; height:100%; }
+  body{ font-family:'Georgia',serif; background:#05060a; color:#eef2fb; overflow-x:hidden; }
+  canvas{ position:fixed; inset:0; z-index:1; display:block; }
+  #veil{ position:fixed; inset:0; z-index:2; pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 40%, transparent 40%, rgba(4,5,10,0.55) 100%); }
+  #hero{ position:relative; min-height:100vh; z-index:3; display:flex; flex-direction:column; justify-content:flex-end;
+    padding:min(8vw,90px); gap:14px; }
+  h1{ font-family:system-ui,-apple-system,Segoe UI,sans-serif; font-weight:800; letter-spacing:-1px;
+    font-size:clamp(44px,9vw,120px); margin:0; line-height:.95;
+    background:linear-gradient(92deg,#c7b3ff,#7fd7ff,#a5f0c8); -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 6px 40px rgba(120,140,255,.25); }
+  .sub{ font-family:system-ui,-apple-system,Segoe UI,sans-serif; font-weight:600; letter-spacing:.5px;
+    font-size:clamp(15px,2.4vw,22px); color:#aeb8c9; margin:0; }
+  p.desc{ max-width:640px; font-size:clamp(15px,2.2vw,19px); line-height:1.55; color:#cdd6e6; margin:6px 0 4px; }
+  .row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:6px; }
+  a.btn{ font-family:system-ui,sans-serif; font-weight:700; font-size:15px; text-decoration:none; padding:12px 22px;
+    border-radius:40px; cursor:pointer; }
+  a.primary{ color:#04101a; background:linear-gradient(92deg,#8fe0ff,#a5f0c8); box-shadow:0 8px 30px rgba(120,220,200,.3); }
+  a.ghost{ color:#e8ecf3; border:1px solid #3a4560; background:rgba(20,26,40,.4); }
+  .credit{ font-family:system-ui,sans-serif; font-size:13px; color:#8b95a8; margin-top:4px; }
+  #modeTag{ position:fixed; bottom:18px; right:22px; z-index:5; font-family:system-ui,sans-serif;
+    font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#7f8aa0; }
+  #nav{ position:fixed; top:0; left:0; right:0; z-index:6; display:flex; align-items:center; justify-content:space-between;
+    padding:16px min(8vw,90px); }
+  #nav .brand{ font-family:'Georgia',serif; font-size:20px; color:#eef2fb; text-decoration:none; letter-spacing:.3px; }
+  #nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+  #nav a.n{ font-family:system-ui,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#9aa5b8; text-decoration:none; }
+  #nav a.n.active{ color:#a5f0c8; }
+  #about{ position:relative; z-index:3; background:linear-gradient(180deg, rgba(6,7,13,.55), rgba(6,7,13,.94)); backdrop-filter:blur(4px);
+    padding:min(11vw,120px) min(8vw,90px); }
+  #about h2{ font-family:system-ui,sans-serif; font-size:clamp(22px,4vw,34px); margin:0 0 16px; color:#eef2fb; }
+  #about p{ max-width:680px; font-size:clamp(15px,2.1vw,18px); line-height:1.65; color:#c3ccdb; margin:0 0 12px; }
+  #about .small{ font-size:13px; color:#8b95a8; margin-top:18px; }
+  @media(max-width:640px){ #hero{ justify-content:center; text-align:left; } #nav{ gap:8px; } }
+</style>
+</head>
+<body>
+  <canvas id="art"></canvas>
+  <div id="veil"></div>
+  <nav id="nav">
+    <a class="brand" href="/">Yu-Fang Yang</a>
+    <div class="links">
+      <a class="n" href="/">Home</a><a class="n" href="/research.html">Research</a>
+      <a class="n" href="/publications.html">Publications</a><a class="n" href="/connect.html">Connect</a>
+      <a class="n active" href="/neyeronstein.html">Art</a>
+    </div>
+  </nav>
+  <div id="modeTag">live demo · no headset needed</div>
+  <div id="hero">
+    <p class="sub">a live brain-art experience</p>
+    <h1>Neyeronstein</h1>
+    <p class="desc">A portable EEG headband turns your live brainwaves into light. See how looking into someone's eyes shifts your state, your mind blooming into colour, motion and surprise.</p>
+    <div class="row">
+      <a class="btn primary" href="/MuseGaze/index.html">Enter the visualiser ▸</a>
+      <a class="btn ghost" href="/MuseGaze/control.html">Connect your headband ▸</a>
+    </div>
+    <p class="credit">Yu-Fang Yang · cognitive neuroscientist</p>
+  </div>
+  <section id="about">
+    <h2>About this project</h2>
+    <p>Neyeronstein is a side project, not peer-reviewed research. It started from curiosity, a place where my day job (EEG, eye-tracking, and how the brain reads faces and gaze) meets my love of signal processing, visualisation and psychology.</p>
+    <p>I built it to make brain signals something you can see and feel. The visuals are art driven by live EEG, not a diagnostic, a therapy, or a health claim.</p>
+    <p class="small">Runs in Chrome with a portable EEG headband · <a href="/MuseGaze/index.html" style="color:#8fe0ff;text-decoration:none">enter the visualiser ▸</a></p>
+    <p class="small">© 2026 Yu-Fang Yang · Neyeronstein. Artwork licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:#8b95a8">CC BY-NC 4.0</a> · code &amp; name, all rights reserved.</p>
+  </section>
+
+<script>
+// ===========================================================================
+//  Neyeronstein landing — a SELF-RUNNING demo. A built-in simulated brain signal
+//  (no headset) drives the same visuals as the live app, cycling through them.
+// ===========================================================================
+const canvas=document.getElementById('art'), ctx=canvas.getContext('2d');
+function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; } addEventListener('resize',resize); resize();
+
+// simulated brain: a slow calm<->active cycle so the butterfly rests then flaps, the bloom opens then closes
+const F={Delta:.25,Theta:.3,Alpha:.6,Beta:.3,Gamma:.15,FAA:.55,HRV:.5};
+let T=0;
+function simBrain(){ T+=0.0075;
+  const calm=0.5+0.5*Math.sin(T*0.55);
+  F.Alpha=0.18+0.62*calm;
+  F.Beta =0.12+0.5*(1-calm)+0.08*Math.sin(T*3.1);
+  F.Gamma=0.05+0.34*(1-calm)+0.05*Math.sin(T*5.0);
+  F.Theta=0.28+0.18*Math.sin(T*0.7);
+  F.FAA =0.5+0.16*Math.sin(T*0.33);
+  F.HRV =0.45+0.25*calm;
+}
+let breathPhase=0; function stepBreath(){ breathPhase+=Math.PI*2*(6/60)/60; return 0.5+0.5*Math.sin(breathPhase); }
+function warm(){ return (F.FAA-0.5)*70; }
+
+// ---- BLOOM
+let bloomRot=0;
+function drawBloom(breath){ const w=canvas.width,h=canvas.height; ctx.fillStyle='rgba(6,7,13,0.16)'; ctx.fillRect(0,0,w,h);
+  const cx=w/2,cy=h/2,R=Math.min(w,h),petals=6,layers=2;
+  const aEff=Math.min(1,F.Alpha*1.6), disc=R*(0.12+aEff*0.14), spread=disc*(0.72+breath*0.7)*(0.85+aEff*0.7), hueC=(272-warm()+360)%360;
+  bloomRot+=0.0015+F.Beta*0.018; ctx.globalCompositeOperation='lighter';
+  for(let L=0;L<layers;L++){ const orb=spread*(1-L*0.26), rr=disc*(1-L*0.14), A=(0.08+aEff*0.06+F.HRV*0.03)*(1-L*0.3);
+    for(let i=0;i<petals;i++){ const a=bloomRot*(L%2?-1:1)+i/petals*Math.PI*2+L*0.5, px=cx+Math.cos(a)*orb, py=cy+Math.sin(a)*orb, hue=(hueC-i/petals*128+L*14+360)%360;  // purple → blue → green
+      const rg=ctx.createRadialGradient(px,py,0,px,py,rr); rg.addColorStop(0,`hsla(${hue},85%,66%,${A})`); rg.addColorStop(0.6,`hsla(${hue},82%,56%,${A*0.55})`); rg.addColorStop(1,`hsla(${hue},80%,50%,0)`);
+      ctx.fillStyle=rg; ctx.beginPath(); ctx.arc(px,py,rr,0,Math.PI*2); ctx.fill(); } }
+  ctx.globalCompositeOperation='source-over';
+}
+// ---- PLASMA
+let plasmaBlobs=[],plasmaT=0; const PH=[275,240,205,175,150,40,320,190];
+function initPlasma(){ plasmaBlobs=[]; for(let i=0;i<8;i++) plasmaBlobs.push({sx:.28+.13*((i*.7)%1),sy:.24+.11*((i*.53)%1),ax:.32+.14*((i*.37)%1),ay:.32+.14*((i*.61)%1),px:i*.9,py:i*1.7+1,hue:PH[i%PH.length]}); }
+function drawPlasma(breath){ const w=canvas.width,h=canvas.height; if(!plasmaBlobs.length)initPlasma();
+  ctx.fillStyle='rgba(3,3,8,0.20)'; ctx.fillRect(0,0,w,h); plasmaT+=0.006+F.Beta*0.022; ctx.globalCompositeOperation='lighter'; const R=Math.max(w,h);
+  for(const b of plasmaBlobs){ const x=w*(0.5+b.ax*Math.sin(plasmaT*b.sx+b.px)), y=h*(0.5+b.ay*Math.sin(plasmaT*b.sy+b.py)), rad=R*(0.14+F.Alpha*0.14+0.05*Math.sin(plasmaT*1.3))*(0.82+breath*0.3), hue=(b.hue-warm()+360)%360, inten=0.075+F.Alpha*0.06;
+    const rg=ctx.createRadialGradient(x,y,0,x,y,rad); rg.addColorStop(0,`hsla(${hue},95%,58%,${inten})`); rg.addColorStop(0.45,`hsla(${hue},88%,48%,${inten*0.45})`); rg.addColorStop(1,`hsla(${hue},85%,42%,0)`);
+    ctx.fillStyle=rg; ctx.beginPath(); ctx.arc(x,y,rad,0,Math.PI*2); ctx.fill(); }
+  ctx.globalCompositeOperation='source-over';
+}
+// ---- BUTTERFLY on a flower
+let flapPhase=0;
+function wingPath(fore,s){ ctx.beginPath();
+  if(fore){ ctx.moveTo(0,-0.04*s); ctx.bezierCurveTo(0.12*s,-0.60*s,0.60*s,-0.66*s,0.70*s,-0.30*s); ctx.bezierCurveTo(0.78*s,-0.04*s,0.42*s,-0.02*s,0,-0.04*s); }
+  else{ ctx.moveTo(0,0.04*s); ctx.bezierCurveTo(0.34*s,0.06*s,0.56*s,0.40*s,0.34*s,0.64*s); ctx.bezierCurveTo(0.22*s,0.78*s,0.05*s,0.44*s,0,0.04*s); } ctx.closePath(); }
+function drawFlower(cx,by,fs){ const h=canvas.height;
+  ctx.strokeStyle='rgba(74,132,84,0.9)'; ctx.lineWidth=fs*0.09; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(cx,h); ctx.quadraticCurveTo(cx-fs*0.7,(by+h)/2,cx,by+fs*0.1); ctx.stroke();
+  ctx.save(); ctx.translate(cx-fs*0.55,(by+h)/2-fs*0.2); ctx.rotate(-0.7); ctx.fillStyle='rgba(86,156,96,0.85)'; ctx.beginPath(); ctx.ellipse(0,0,fs*0.7,fs*0.26,0,0,Math.PI*2); ctx.fill(); ctx.restore();
+  for(let i=0;i<7;i++){ const a=i/7*Math.PI*2; ctx.save(); ctx.translate(cx+Math.cos(a)*fs*0.5,by+Math.sin(a)*fs*0.5); ctx.rotate(a);
+    const pg=ctx.createRadialGradient(0,0,0,0,0,fs*0.62); pg.addColorStop(0,'hsla(342,85%,86%,0.97)'); pg.addColorStop(1,'hsla(338,80%,64%,0.94)');
+    ctx.fillStyle=pg; ctx.beginPath(); ctx.ellipse(fs*0.28,0,fs*0.42,fs*0.24,0,0,Math.PI*2); ctx.fill(); ctx.restore(); }
+  ctx.fillStyle='hsla(46,92%,62%,1)'; ctx.beginPath(); ctx.arc(cx,by,fs*0.34,0,Math.PI*2); ctx.fill();
+}
+function drawOneButterfly(cx,cy,s,wingOpen,hueC){
+  for(const fore of [false,true]) for(const side of [-1,1]){ ctx.save(); ctx.translate(cx,cy); ctx.scale(side*wingOpen,1); wingPath(fore,s);
+    const hue=fore?hueC:(hueC+32)%360, cyG=fore?-0.22*s:0.28*s, rg=ctx.createRadialGradient(0.15*s,cyG,0,0.15*s,cyG,0.8*s);
+    rg.addColorStop(0,`hsla(${hue},92%,42%,1)`); rg.addColorStop(0.55,`hsla(${hue},90%,58%,1)`); rg.addColorStop(1,`hsla(${(hue+18)%360},95%,72%,1)`);
+    ctx.fillStyle=rg; ctx.fill(); ctx.strokeStyle=`hsla(${hue},55%,14%,0.7)`; ctx.lineWidth=Math.max(1,s*0.018); ctx.stroke();
+    ctx.fillStyle='#fff'; const dots=fore?[[0.52,-0.44],[0.6,-0.30],[0.62,-0.16]]:[[0.4,0.46],[0.26,0.58]];
+    for(const [dx,dy] of dots){ ctx.beginPath(); ctx.arc(dx*s,dy*s,s*0.032,0,Math.PI*2); ctx.fill(); } ctx.restore(); }
+  ctx.fillStyle='rgba(14,14,22,1)'; ctx.beginPath(); ctx.ellipse(cx,cy,s*0.058,s*0.6,0,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(cx,cy-s*0.58,s*0.08,0,Math.PI*2); ctx.fill();
+  ctx.strokeStyle='rgba(18,18,28,0.9)'; ctx.lineWidth=Math.max(1,s*0.016);
+  for(const t of [-1,1]){ ctx.beginPath(); ctx.moveTo(cx,cy-s*0.63); ctx.quadraticCurveTo(cx+t*s*0.16,cy-s*0.88,cx+t*s*0.24,cy-s*0.8); ctx.stroke();
+    ctx.fillStyle='rgba(18,18,28,0.9)'; ctx.beginPath(); ctx.arc(cx+t*s*0.24,cy-s*0.8,s*0.03,0,Math.PI*2); ctx.fill(); }
+}
+function drawButterfly(breath){ const w=canvas.width,h=canvas.height; ctx.fillStyle='rgba(7,8,16,0.30)'; ctx.fillRect(0,0,w,h);
+  const cx=w/2,R=Math.min(w,h), arousal=Math.min(1,(F.Beta+F.Gamma)*1.15);
+  flapPhase+=0.12+arousal*0.6; const wingOpen=Math.max(0.16,1-arousal*(0.5-0.5*Math.cos(flapPhase)));
+  const s=R*(0.17+F.Alpha*0.11)*(0.94+breath*0.08), cy=h/2-R*0.06, blossomY=cy+s*0.62+s*0.55, hueC=(255-warm()+360)%360;
+  ctx.globalCompositeOperation='lighter'; const gl=ctx.createRadialGradient(cx,cy,0,cx,cy,s*1.8);
+  gl.addColorStop(0,`hsla(${hueC},80%,60%,${0.04+F.Alpha*0.16})`); gl.addColorStop(1,`hsla(${hueC},80%,55%,0)`);
+  ctx.fillStyle=gl; ctx.beginPath(); ctx.arc(cx,cy,s*1.8,0,Math.PI*2); ctx.fill(); ctx.globalCompositeOperation='source-over';
+  drawFlower(cx,blossomY,s*0.62); drawOneButterfly(cx,cy,s,wingOpen,hueC);
+}
+
+const MODES=[['bloom',drawBloom],['plasma',drawPlasma]];
+let mi=0, lastSwitch=0; const tag=document.getElementById('modeTag');
+function loop(ts){ simBrain(); const breath=stepBreath();
+  if(ts-lastSwitch>13000){ mi=(mi+1)%MODES.length; lastSwitch=ts; ctx.fillStyle='#05060a'; ctx.fillRect(0,0,canvas.width,canvas.height);
+    tag.textContent='live demo · '+MODES[mi][0]+' · no headset needed'; }
+  MODES[mi][1](breath); requestAnimationFrame(loop);
+}
+ctx.fillStyle='#05060a'; ctx.fillRect(0,0,canvas.width,canvas.height); requestAnimationFrame(loop);
+</script>
+</body>
+</html>
